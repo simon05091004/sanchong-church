@@ -3,14 +3,14 @@
 參照淡水會所網站的架構所製作的靜態網站，直接放在 GitHub Pages 上即可運作，
 **不需要任何後端、資料庫或安裝步驟**。
 
-網址：`https://simon05091004.github.io/sanchong/`
+網址：`https://simon05091004.github.io/sanchong-church/`
 
 ---
 
 ## 一、檔案結構
 
 ```
-sanchong/
+sanchong-church/
 ├── index.html              首頁
 ├── faith.html              首頁 › 我們的信仰
 ├── practice.html           首頁 › 我們的實行
@@ -22,9 +22,8 @@ sanchong/
 ├── prayer.html             代禱事項
 ├── meetings.html           聚會時間
 ├── contact.html            聯絡我們
-└── assets/
-    ├── style.css           全站樣式（配色、版面、響應式）
-    └── site.js             標題帶 / 選單 / 頁尾（全站共用）
+├── style.css               全站樣式（配色、版面、響應式）
+└── site.js                 標題帶 / 選單 / 頁尾（全站共用）
 ```
 
 選單結構與淡水會所相同：
@@ -44,7 +43,7 @@ sanchong/
 
 ### 1. 改會所名稱、標題帶經文、頁尾聯絡資訊
 
-只改 **`assets/site.js`** 最上面的 `SITE` 設定，全站會一起更新：
+只改 **`site.js`** 最上面的 `SITE` 設定，全站會一起更新：
 
 ```js
 var SITE = {
@@ -60,7 +59,7 @@ var SITE = {
 
 ### 2. 增加或修改選單項目
 
-一樣在 `assets/site.js`，改 `NAV` 陣列：
+一樣在 `site.js`，改 `NAV` 陣列：
 
 ```js
 { id: "truth", label: "真理追求", href: "truth.html", children: [
@@ -73,7 +72,7 @@ var SITE = {
 
 ### 3. 改配色
 
-改 `assets/style.css` 最上面的 `:root`：
+改 `style.css` 最上面的 `:root`：
 
 | 變數 | 目前色值 | 用途 |
 | --- | --- | --- |
@@ -116,11 +115,11 @@ var SITE = {
 
 檔案中凡標示 **★** 或 `（請填寫）` 之處，都是需要換成實際內容的地方：
 
-- [ ] 會所地址、電話、Email（`assets/site.js` 的 `SITE` ＋ `contact.html`）
+- [ ] 會所地址、電話、Email（`site.js` 的 `SITE` ＋ `contact.html`）
 - [ ] 各項聚會的實際時間（`meetings.html`）
 - [ ] 交通方式與 Google 地圖嵌入碼（`contact.html`）
 - [ ] 會所沿革（`about.html`）
-- [ ] 會所與聚會照片（放進 `assets/`，取代 `.placeholder` 區塊）
+- [ ] 會所與聚會照片（上傳到 repo 根目錄，取代 `.placeholder` 區塊）
 - [ ] 真理課程、生命課程的上課時間（`truth.html`）
 - [ ] 每週晨興綱目（`morning-revival.html`）
 
@@ -129,7 +128,7 @@ var SITE = {
 ## 五、本機預覽
 
 ```bash
-cd sanchong
+cd sanchong-church
 python3 -m http.server 8000
 # 瀏覽器開啟 http://localhost:8000/
 ```
