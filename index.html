@@ -39,71 +39,172 @@
     <h1 class="page__title">歡迎來到三重會所</h1>
     <p class="page__lead">我們是一班單純愛主、寶貝主話的信徒，在三重這地實行召會生活。無論您是初次認識主，或是尋找召會的弟兄姊妹，都歡迎您來。</p>
 
+    <!-- ============================================================
+         首頁入口區塊（參照淡水會所首頁的四欄版面）
+         每一塊放一段摘要，底部以「更多資訊 ›」連到內頁。
+         ★ 標記處請替換為實際內容。
+         ============================================================ -->
+    <div class="home-grid">
+
+      <!-- ── 1. 最新消息（★ 每週更新）── -->
+      <section class="block">
+        <h2 class="block__title">最新消息</h2>
+        <div class="block__body">
+          <ul class="block__list block__list--plain">
+            <li><span class="block__date">9/20（日）</span>　（★ 請填入公告內容）</li>
+            <li><span class="block__date">9/27（日）</span>　（★ 請填入公告內容）</li>
+            <li><span class="block__date">10/4（日）</span>　（★ 請填入公告內容）</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── 2. 聚會時間 ── -->
+      <section class="block">
+        <h2 class="block__title">聚會時間</h2>
+        <div class="block__body">
+          <ul class="block__list block__list--plain">
+            <li><span class="block__date">主日聚會</span>　每主日 09:30　各會所</li>
+            <li><span class="block__date">禱告聚會</span>　每週二 20:00　各會所</li>
+            <li><span class="block__date">聖經研讀</span>　每週四 09:30　大同會所一樓</li>
+            <li><span class="block__date">小排聚會</span>　每週五 20:00　各家</li>
+          </ul>
+        </div>
+        <a class="block__more" href="meetings.html">本週聚會與讀經進度</a>
+      </section>
+
+      <!-- ── 3. 晨興聖言（★ 每週更新摘錄）── -->
+      <section class="block">
+        <h2 class="block__title">晨興聖言</h2>
+        <div class="block__body">
+          <p><b>第一週、週一</b></p>
+          <p class="block__quote">（★ 摘錄本週一則主要經節）
+            <span class="block__ref">（★ 經節出處）</span>
+          </p>
+        </div>
+        <a class="block__more" href="morning-revival.html">本週完整綱目</a>
+      </section>
+
+      <!-- ── 4. 代禱事項 ── -->
+      <section class="block">
+        <h2 class="block__title">代禱事項</h2>
+        <div class="block__body">
+          <ul class="block__list">
+            <li>求主興起家中有兒童的家長，一同配搭兒童主日的服事。</li>
+            <li>為青少年及其家長能進入召會生活，並且早日得救禱告。</li>
+            <li>為福音的開展，以及新人被主得着、進入召會生活代禱。</li>
+          </ul>
+        </div>
+        <a class="block__more" href="prayer.html">完整代禱事項</a>
+      </section>
+
+      <!-- ── 5. 召會簡介 ── -->
+      <section class="block">
+        <h2 class="block__title">召會簡介</h2>
+        <div class="block__body">
+          <p>我們是一班蒙主耶穌基督救贖的平常人，沒有神職與平信徒的分別，也沒有宗派的名稱；我們只有一個共同的身分：基督身體上的肢體。</p>
+        </div>
+        <a class="block__more" href="about.html">更多資訊</a>
+      </section>
+
+      <!-- ── 6. 召會生活 ── -->
+      <section class="block">
+        <h2 class="block__title">召會生活</h2>
+        <div class="block__body">
+          <!-- ★ 請將聚會照片上傳到 repo 根目錄，再把下面這塊換成 <img src="照片.jpg" alt="召會生活"> -->
+          <div class="block__thumb">召會生活照片<br>（請置換為實際照片）</div>
+          <p class="block__quote">我賜給你們一條新誡命，乃是叫你們彼此相愛，正如我愛你們，為使你們也彼此相愛。
+            <span class="block__ref">約翰福音 13章34節</span>
+          </p>
+        </div>
+        <a class="block__more" href="church-life.html">更多資訊</a>
+      </section>
+
+      <!-- ── 7. 蒙恩交通（★ 不定期更新摘錄）── -->
+      <section class="block">
+        <h2 class="block__title">蒙恩交通</h2>
+        <div class="block__body">
+          <p>（★ 摘錄一則弟兄姊妹的蒙恩見證前幾句，約三、四行，其餘引導讀者點入內頁閱讀。）</p>
+        </div>
+        <a class="block__more" href="testimony.html">更多見證</a>
+      </section>
+
+      <!-- ── 8. 真理追求 ── -->
+      <section class="block">
+        <h2 class="block__title">真理追求</h2>
+        <div class="block__body">
+          <p>按着進度有系統地追求神的話——真理課程、生命課程、年度讀經計畫，以及每年的特會與訓練。</p>
+          <p class="block__quote">你們必認識真理，真理必叫你們得以自由。
+            <span class="block__ref">約翰福音 8章32節</span>
+          </p>
+        </div>
+        <a class="block__more" href="truth.html">更多資訊</a>
+      </section>
+
+      <!-- ── 9. 我們的信仰 ── -->
+      <section class="block">
+        <h2 class="block__title">我們的信仰</h2>
+        <div class="block__body">
+          <p>聖經是神完整的啟示；神是父、子、靈三而一的神；基督成為肉體、為我們死而復活，成了賜生命的靈；召會是基督的身體，一地一會。</p>
+        </div>
+        <a class="block__more" href="faith.html">更多資訊</a>
+      </section>
+
+      <!-- ── 10. 我們的實行 ── -->
+      <section class="block">
+        <h2 class="block__title">我們的實行</h2>
+        <div class="block__body">
+          <p>晨興與主相會、禱讀主話、隨時呼求主名、在家中有家聚會與小排，並且人人在聚會中盡功用、彼此供應。</p>
+        </div>
+        <a class="block__more" href="practice.html">更多資訊</a>
+      </section>
+
+      <!-- ── 11. 聯絡我們 ── -->
+      <section class="block">
+        <h2 class="block__title">聯絡我們</h2>
+        <div class="block__body">
+          <ul class="block__list block__list--plain">
+            <li><span class="block__date">地址</span>　（★ 請填寫）</li>
+            <li><span class="block__date">電話</span>　（★ 請填寫）</li>
+            <li><span class="block__date">E-mail</span>　（★ 請填寫）</li>
+          </ul>
+          <p>初次前來不需要報名，也沒有任何費用，直接前來即可。</p>
+        </div>
+        <a class="block__more" href="contact.html">交通方式與地圖</a>
+      </section>
+
+      <!-- ── 12. 相關網站（★ 請填入實際網址）── -->
+      <section class="block">
+        <h2 class="block__title">相關網站</h2>
+        <div class="block__body">
+          <ul class="block__list block__list--plain">
+            <li><a href="#">網上聖經—恢復本</a></li>
+            <li><a href="#">台灣福音書房</a></li>
+            <li><a href="#">新北市召會</a></li>
+            <li><a href="#">召會通訊</a></li>
+            <li><a href="#">水深之處</a></li>
+            <li><a href="#">主恢復資訊入口</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ── 初次來訪 ── -->
     <div class="layout">
       <div>
-        <h2 class="sec">我們在這裏聚集</h2>
-        <p>召會不是宗教組織，也不是某個宗派，乃是一班蒙主救贖的人由主的生命所構成，在一個地方彼此相調、互相扶持，一同享受基督、事奉神。</p>
-        <p>在三重會所，我們每主日一同擘餅記念主、聽主的話；每週有禱告聚會、小排聚會與家聚會。兒童、青少年、大專、青職與長青，各年齡層都有合適的牧養與服事。</p>
-
-        <h2 class="sec">第一次來訪</h2>
+        <h2 class="sec" style="margin-top:0">第一次來訪</h2>
         <ul class="list">
           <li>聚會不需要事先報名，也沒有任何費用，請放心前來。</li>
           <li>穿著整潔即可，不需要特別的服裝。</li>
           <li>建議第一次可以參加<a href="meetings.html">主日聚會</a>，會後有弟兄姊妹陪您認識召會生活。</li>
           <li>若不知道地點怎麼走，歡迎先<a href="contact.html">與我們聯絡</a>，我們可以安排接待。</li>
         </ul>
-
-        <h2 class="sec">從這裏開始認識我們</h2>
-        <ul class="cards">
-          <li><a class="card" href="faith.html">
-            <span class="card__kicker">Our Faith</span>
-            <span class="card__title">我們的信仰</span>
-            <p class="card__text">我們所信的神、所信的聖經、所信的救恩與召會。</p>
-          </a></li>
-          <li><a class="card" href="practice.html">
-            <span class="card__kicker">Our Practice</span>
-            <span class="card__title">我們的實行</span>
-            <p class="card__text">晨興、禱讀、呼求主名、家聚會與人人盡功用的聚會。</p>
-          </a></li>
-          <li><a class="card" href="meetings.html">
-            <span class="card__kicker">Meetings</span>
-            <span class="card__title">聚會時間</span>
-            <p class="card__text">主日、禱告、小排與各年齡層聚會的時間一覽。</p>
-          </a></li>
-          <li><a class="card" href="morning-revival.html">
-            <span class="card__kicker">Morning Revival</span>
-            <span class="card__title">晨興聖言</span>
-            <p class="card__text">本週晨興綱目與讀經進度，天天在晨光中與主相會。</p>
-          </a></li>
-          <li><a class="card" href="prayer.html">
-            <span class="card__kicker">Prayer</span>
-            <span class="card__title">代禱事項</span>
-            <p class="card__text">為兒童、青少年、大專、青職與召會的需要同心合意禱告。</p>
-          </a></li>
-          <li><a class="card" href="testimony.html">
-            <span class="card__kicker">Testimonies</span>
-            <span class="card__title">蒙恩交通</span>
-            <p class="card__text">弟兄姊妹在生活與服事中經歷主的見證分享。</p>
-          </a></li>
-        </ul>
       </div>
-
       <aside>
         <p class="verse verse--ruled">
           你們來到祂這爲人所棄絕，却爲神所揀選所寶貴的活石跟前，也就像活石，被建造成爲屬靈的殿，成爲聖別的祭司體系，藉着耶穌基督獻上神所悅納的屬靈祭物。
           <span class="verse__ref">彼得前書 2章4~5節</span>
         </p>
-
-        <div class="panel" style="margin-top:28px">
-          <h2 class="sec" style="margin-top:0">本週聚會提醒</h2>
-          <ul class="list list--plain">
-            <li><b>主日聚會</b>　每主日 09:30　各會所</li>
-            <li><b>禱告聚會</b>　每週二 20:00　各會所</li>
-            <li><b>聖經研讀</b>　每週四 09:30　大同會所一樓</li>
-            <li><b>小排聚會</b>　每週五 20:00　各家</li>
-          </ul>
-          <p style="margin-bottom:0"><a href="meetings.html">查看完整聚會時間 →</a></p>
-        </div>
       </aside>
     </div>
   </div>
