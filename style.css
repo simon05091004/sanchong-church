@@ -31,7 +31,11 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
+  /* 系統內建中文字體：Mac 用蘋方、Windows 用微軟正黑體（與淡水會所網站一致），
+     不載入網頁字型，載入速度較快；若系統都沒有才退回 Noto Sans TC */
+  font-family:"PingFang TC","蘋方-繁","Microsoft JhengHei","微軟正黑體",
+              "Hiragino Sans TC","Noto Sans TC",system-ui,-apple-system,
+              "Helvetica Neue",Arial,sans-serif;
   font-size:17px;
   line-height:1.85;
   letter-spacing:.01em;
@@ -64,7 +68,7 @@ a:hover{text-decoration:underline}
   font-size:clamp(30px,4.6vw,50px);font-weight:900;line-height:1;letter-spacing:.02em;
 }
 .banner__hall{
-  font-size:clamp(17px,2.4vw,27px);font-weight:900;line-height:1;letter-spacing:.02em;
+  font-size:clamp(17px,2.4vw,27px);font-weight:500;line-height:1;letter-spacing:.02em;
 }
 .banner__verse{
   text-align:right;font-weight:700;line-height:1.7;
@@ -129,7 +133,7 @@ a:hover{text-decoration:underline}
    ============================================================ */
 .page{padding-block:44px 64px;min-height:52vh}
 .page__title{
-  font-size:clamp(30px,4.4vw,44px);font-weight:900;color:var(--brand);
+  font-size:clamp(30px,4.4vw,44px);font-weight:700;color:var(--brand);
   margin:0 0 6px;line-height:1.25;letter-spacing:.02em;
 }
 .page__lead{color:var(--ink-2);margin:0 0 26px;font-size:17px}
