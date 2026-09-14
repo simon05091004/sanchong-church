@@ -19,10 +19,11 @@
     verse:    "在祂裏面，你們也同被建造，成為神在靈裏的居所。",
     verseRef: "以弗所書 2章22節",
 
-    // 頁尾聯絡資訊（★ 請替換成實際資料）
-    address: "新北市三重區　　　路　　號",
-    phone:   "(02) 0000-0000",
-    email:   "churchinsanchong@example.com"
+    // 頁尾聯絡資訊
+    // ★ phone 與 email 填空字串時，頁尾會自動不顯示該行；有資料時填回去即可
+    address: "新北市三重區大同北路36號",
+    phone:   "",
+    email:   ""
   };
 
   /* ---------- 2) 選單結構 ---------------------------------- */
@@ -125,6 +126,15 @@
   }
 
   /* ---- 頁尾 ---- */
+  /* 只輸出有填值的聯絡欄位，留空的行不會出現 */
+  function buildContactLines() {
+    var lines = [];
+    if (SITE.address) lines.push("地址：" + SITE.address);
+    if (SITE.phone)   lines.push("電話：" + SITE.phone);
+    if (SITE.email)   lines.push("Email：<a href=\"mailto:" + SITE.email + "\">" + SITE.email + "</a>");
+    return lines.join("<br>");
+  }
+
   function buildFooter() {
     var links = el("ul", { class: "footer__links" });
     NAV.forEach(function (item) {
@@ -133,9 +143,7 @@
 
     var brand = el("div", null, [
       el("div", { class: "footer__brand", text: SITE.org + "　" + SITE.hall }),
-      el("p", { class: "footer__meta",
-                html: "地址：" + SITE.address + "<br>電話：" + SITE.phone +
-                      "<br>Email：<a href=\"mailto:" + SITE.email + "\">" + SITE.email + "</a>" })
+      el("p", { class: "footer__meta", html: buildContactLines() })
     ]);
 
     return el("footer", { class: "footer" }, [
