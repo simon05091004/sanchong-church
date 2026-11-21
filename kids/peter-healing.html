@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="兒童排教案：彼得岳母和各樣患病的人得醫治（國小五、六年級，40 分鐘），附投影用互動故事與活動。">
+<title>彼得岳母得醫治</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout：頂端是 40 分鐘時間軸（寬度依分鐘數），下方一次只顯示一段；備課模式右側附教師提示，投影模式只留舞台 */
+:root{
+  --bg:#EDF2F6; --surface:#FFFFFF; --surface-2:#E2E9F0; --ink:#14213A; --muted:#55637A; --line:#C9D4DF;
+  --accent:#1C5DA6; --on-accent:#FFFFFF;
+  --fever:#D3412A; --fever-soft:#FCE5DF; --heal:#0F8576; --heal-soft:#D4EEE8; --dusk:#B86E0E; --dusk-soft:#FBEBD2;
+  --body:#B45C19; --body-soft:#F8E6D4; --soul:#93408A; --soul-soft:#F4E3F1; --spirit:#3953BA; --spirit-soft:#E2E7FA;
+  --stage-filter:none; --shadow:0 1px 2px rgba(20,33,58,.07),0 8px 24px rgba(20,33,58,.07);
+  --font-kai:"LXGW WenKai TC","Kaiti TC","BiauKai","DFKai-SB","STKaiti",serif;
+  --font-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1521; --surface:#162031; --surface-2:#1D2A3E; --ink:#E6ECF4; --muted:#9BAABE; --line:#2B3A51;
+  --accent:#7FB2F0; --on-accent:#0E1521;
+  --fever:#FF6E52; --fever-soft:#3B201B; --heal:#3FCBB3; --heal-soft:#14332F; --dusk:#F2B25A; --dusk-soft:#38291A;
+  --body:#F0A25F; --body-soft:#392A1D; --soul:#E58CDA; --soul-soft:#35233A; --spirit:#97A9F6; --spirit-soft:#232B4A;
+  --stage-filter:brightness(.9); --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1521; --surface:#162031; --surface-2:#1D2A3E; --ink:#E6ECF4; --muted:#9BAABE; --line:#2B3A51;
+  --accent:#7FB2F0; --on-accent:#0E1521;
+  --fever:#FF6E52; --fever-soft:#3B201B; --heal:#3FCBB3; --heal-soft:#14332F; --dusk:#F2B25A; --dusk-soft:#38291A;
+  --body:#F0A25F; --body-soft:#392A1D; --soul:#E58CDA; --soul-soft:#35233A; --spirit:#97A9F6; --spirit-soft:#232B4A;
+  --stage-filter:brightness(.9); --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+.kai{font-family:var(--font-kai)}
+h1,h2,h3,h4{text-wrap:balance}
+.eyebrow{font-size:12.5px;letter-spacing:.08em;color:var(--muted);margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:15px;line-height:1.3}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
+.btn:disabled{opacity:.45;cursor:default}
+.link-btn{border:0;background:none;color:var(--accent);cursor:pointer;padding:0 4px;text-decoration:underline;text-underline-offset:3px;font-size:.92em}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-block:10px 8px}
+.brand{min-width:0}
+.brand h1{font-family:var(--font-kai);font-size:clamp(20px,2.4vw,26px);margin:0;line-height:1.25}
+.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface-2)}
+.toggle button{border:0;background:transparent;padding:4px 14px;border-radius:999px;cursor:pointer;font-size:14px;line-height:1.4}
+.toggle button[aria-pressed="true"]{background:var(--surface);box-shadow:var(--shadow);font-weight:700}
+.timer{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 4px 3px 12px;font-size:14px;line-height:1.4}
+.timer .lbl{color:var(--muted)}
+.timer .time{font-variant-numeric:tabular-nums;font-weight:700;min-width:3.2em;text-align:right}
+.timer.over .time{color:var(--fever)}
+.timer button{border:0;border-radius:999px;padding:3px 10px;cursor:pointer;font-size:13px;background:var(--surface-2)}
+.timer button.go{background:var(--accent);color:var(--on-accent)}
+nav.timeline{display:flex;gap:4px;padding-block:0 10px;overflow-x:auto;scrollbar-width:thin}
+.tl{flex:var(--m,0) 1 0;min-width:72px;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:5px 9px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;line-height:1.3}
+.tl.plan-tl{flex:0 0 auto;min-width:64px}
+.tl .t{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tl .l{font-size:14px;font-weight:700;white-space:nowrap}
+.tl[aria-current="page"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.tl[aria-current="page"] .t{color:inherit;opacity:.85}
+
+main{padding-block:22px 64px}
+.seg-head{display:flex;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-bottom:16px}
+.seg-head .when{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
+.seg-head h2{font-family:var(--font-kai);font-size:clamp(24px,3vw,34px);margin:0;line-height:1.3}
+.seg-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
+.stage-area{min-width:0;display:flex;flex-direction:column;gap:16px}
+body.proj .seg-grid{grid-template-columns:minmax(0,1fr)}
+body.proj .teacher{display:none}
+body.proj .stage-area{font-size:1.12em}
+@media (max-width:920px){.seg-grid{grid-template-columns:minmax(0,1fr)}}
+.teacher{background:var(--surface);border:1.5px dashed var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.7;min-width:0}
+.teacher h3{font-size:15px;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.tag-t{font-size:11.5px;letter-spacing:.06em;background:var(--ink);color:var(--bg);border-radius:4px;padding:1px 7px;font-weight:700}
+.teacher ol{margin:0 0 10px;padding-left:1.3em;display:grid;gap:6px}
+.teacher p{margin:8px 0 0}
+.teacher .trans b,.teacher .qa b,.teacher .warn b{display:inline-block;margin-right:6px}
+.teacher .qa span{display:block;color:var(--muted)}
+.teacher .warn{background:var(--fever-soft);border-radius:8px;padding:8px 10px}
+.teacher .trans{color:var(--muted)}
+.seg-foot{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.seg-foot a{text-decoration:none}
+
+/* ---------- plan ---------- */
+.plan-head{display:grid;gap:10px;margin-bottom:26px}
+.plan-head h2{font-family:var(--font-kai);font-size:clamp(28px,4vw,44px);line-height:1.25;margin:0}
+.core{font-family:var(--font-kai);font-size:clamp(19px,2.2vw,24px);margin:0;color:var(--heal)}
+.how{font-size:14.5px;color:var(--muted);max-width:68ch;margin:0}
+.plan-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:30px;align-items:start}
+@media (max-width:980px){.plan-body{grid-template-columns:minmax(0,1fr)}}
+.plan-main,.plan-side{min-width:0;display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+.blk h3{font-size:18px;margin:0 0 8px}
+.blk p{margin:0;max-width:68ch}
+.blk ol,.blk ul{margin:0;padding-left:1.3em;display:grid;gap:6px;max-width:68ch}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table.flow{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6}
+.flow th,.flow td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.flow tr:last-child td{border-bottom:0}
+.flow th{font-size:13px;color:var(--muted);font-weight:500;background:var(--surface-2)}
+.flow td.t{font-variant-numeric:tabular-nums;white-space:nowrap}
+.mbar{display:block;height:6px;border-radius:3px;background:var(--accent);width:calc(var(--m) * 7px);margin-top:6px;opacity:.75}
+.flow td.seg{font-weight:700;white-space:nowrap}
+.flow td.go a{white-space:nowrap}
+.side-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.side-card h3{font-size:16px;margin:0 0 8px}
+.side-card ul{margin:0;padding-left:1.2em;display:grid;gap:5px;font-size:15px}
+.mv{list-style:none;padding:0!important;gap:10px!important}
+.mv li{font-family:var(--font-kai);font-size:18px;line-height:1.6}
+.mv li span{display:block;font-family:var(--font-body);font-size:13px;color:var(--muted)}
+.notes li{line-height:1.7}
+
+/* ---------- open ---------- */
+.open-stage{display:grid;gap:18px;padding:clamp(20px,4vw,40px)}
+.open-stage .big{font-family:var(--font-kai);font-size:clamp(28px,4.4vw,52px);line-height:1.25;margin:0}
+.refs{color:var(--muted);margin:0;font-size:15px}
+.open-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+.mini{background:var(--surface-2);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.mini .tag{font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.mini b{font-size:clamp(20px,2.2vw,26px);line-height:1.4}
+.mini .kai{font-family:var(--font-kai)}
+.quest{font-size:clamp(18px,2vw,22px);margin:0}
+.quest b{font-family:var(--font-kai);color:var(--heal);font-size:1.15em}
+
+/* ---------- warmup ---------- */
+.warm{display:grid;grid-template-columns:clamp(110px,16vw,170px) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center}
+.thermo{width:100%;height:auto;display:block}
+.th-out{fill:var(--line)}
+.th-in{fill:var(--surface)}
+.th-tick{stroke:var(--muted);stroke-width:2}
+.th-num{fill:var(--muted);font-size:15px;font-family:var(--font-body)}
+.th-fever{stroke:var(--fever);stroke-width:2;stroke-dasharray:5 4}
+.th-fl{fill:var(--fever);font-size:12px;font-weight:700;font-family:var(--font-body)}
+.readout{display:grid;gap:12px;min-width:0}
+.temp-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.temp-big{font-size:clamp(48px,7vw,84px);font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.temp-big small{font-size:.4em;margin-left:4px;font-weight:500}
+.face{width:clamp(80px,10vw,120px);height:auto}
+.pill{display:inline-block;border-radius:999px;padding:3px 14px;font-weight:700;font-size:18px}
+.pill.ok{background:var(--heal-soft);color:var(--heal)}
+.pill.warm{background:var(--dusk-soft);color:var(--dusk)}
+.pill.hot,.pill.hotter,.pill.danger{background:var(--fever-soft);color:var(--fever)}
+.feel{font-family:var(--font-kai);font-size:clamp(20px,2.4vw,28px);margin:0;line-height:1.5}
+.band-note{margin:0;color:var(--fever);font-weight:500}
+.slider-row{display:grid;gap:10px}
+input[type=range]{width:100%;accent-color:var(--fever)}
+.presets{display:flex;gap:8px;flex-wrap:wrap}
+.qcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.qcard{display:grid;gap:6px;align-content:start}
+.qcard .qn{font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.qcard p{margin:0}
+.qcard .q{font-size:clamp(17px,1.8vw,20px);font-weight:700;line-height:1.5}
+.qcard .a{color:var(--heal);font-weight:500}
+
+/* ---------- doctor ---------- */
+.doc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start}
+@media (max-width:760px){.doc-grid{grid-template-columns:minmax(0,1fr)}}
+.slip{padding:0;overflow:hidden}
+.slip-head{display:flex;justify-content:space-between;align-items:baseline;padding:14px 20px;background:var(--heal-soft);border-bottom:2px solid var(--heal)}
+.slip-head .kai{font-size:26px;font-weight:700;color:var(--heal)}
+.slip-no{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.slip dl{margin:0;padding:6px 20px 4px}
+.slip dl>div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px dotted var(--line)}
+.slip dt{color:var(--muted);font-size:14px}
+.slip dd{margin:0;font-weight:500}
+.slip dd ol{margin:0;padding-left:1.2em}
+.slip .next-stop{font-family:var(--font-kai);font-size:20px;color:var(--heal)}
+.slip-verse{margin:0;padding:14px 20px 18px;font-size:clamp(19px,2vw,23px);line-height:1.6}
+.slip-verse span{font-family:var(--font-body);font-size:13px;color:var(--muted);margin-left:6px}
+.compare{display:grid;gap:10px}
+.compare .hint{margin:0;color:var(--muted);font-size:14px}
+.cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0;text-align:left;cursor:pointer;overflow:hidden}
+.cmp-q{grid-column:1/-1;padding:8px 14px;font-weight:700;background:var(--surface-2);font-size:15px}
+.cmp-a,.cmp-b{padding:10px 14px;display:grid;gap:2px;align-content:start;min-height:4.6em}
+.cmp-a i,.cmp-b i{font-style:normal;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.cmp-b{border-left:1px solid var(--line)}
+.cmp .qm{font-size:24px;color:var(--heal);font-weight:700;line-height:1.2}
+.cmp:not(.on) .ans{display:none}
+.cmp.on .qm{display:none}
+.cmp.on .cmp-b{background:var(--heal-soft)}
+.cmp .ans{color:var(--heal);font-weight:700}
+
+/* ---------- story ---------- */
+.stage{position:relative;aspect-ratio:16/9;width:min(100%,calc((100vh - 300px) * 1.7778));min-width:min(100%,320px);max-width:100%;margin-inline:auto;border-radius:14px;overflow:hidden;background:var(--surface-2);filter:var(--stage-filter)}
+.stage svg{display:block;width:100%;height:100%}
+.svg-kai{font-family:var(--font-kai)}
+.svg-map{font:700 13px var(--font-body);fill:#3A2E22}
+.svg-map-s{font:12px var(--font-body);fill:#3C6E8F}
+.thermo-mini{position:absolute;right:1.6%;top:3%;width:8.5%;min-width:46px;background:color-mix(in srgb,var(--surface) 90%,transparent);border-radius:10px;padding:6px 4px 4px;display:grid;justify-items:center;box-shadow:var(--shadow)}
+.thermo-mini svg{width:100%;height:auto}
+.tm-read{font-weight:700;font-variant-numeric:tabular-nums;font-size:clamp(11px,1.4vw,17px);line-height:1.2;white-space:nowrap}
+.counter{position:absolute;left:2%;top:4%;background:color-mix(in srgb,var(--surface) 92%,transparent);border-radius:999px;padding:5px 6px 5px 16px;display:flex;align-items:center;gap:10px;font-size:clamp(13px,1.6vw,18px);box-shadow:var(--shadow)}
+.counter b{font-variant-numeric:tabular-nums;color:var(--heal);font-size:1.2em}
+.stage-act{position:absolute;left:50%;top:5%;transform:translateX(-50%)}
+.big-btn{border:0;border-radius:999px;background:var(--heal);color:#fff;font-weight:700;font-size:clamp(15px,2vw,22px);padding:.55em 1.4em;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18);animation:pulse 1.8s ease-in-out infinite}
+.big-btn:disabled{animation:none;opacity:.5;cursor:default}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.stage-toast{position:absolute;left:50%;top:5%;transform:translateX(-50%);background:var(--surface);color:var(--heal);font-family:var(--font-kai);font-weight:700;font-size:clamp(18px,2.8vw,32px);padding:.3em 1em;border-radius:12px;box-shadow:var(--shadow);white-space:nowrap;animation:pop .5s ease-out}
+@keyframes pop{from{transform:translate(-50%,-8px);opacity:0}}
+.narr{display:grid;gap:8px}
+.narr-top{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;font-size:14px;color:var(--muted)}
+.narr h3{font-family:var(--font-kai);font-size:clamp(22px,2.6vw,30px);margin:0;line-height:1.3}
+.narr-text{font-family:var(--font-kai);font-size:clamp(19px,2.1vw,25px);line-height:1.75;margin:0;max-width:44em}
+body.proj .narr-text{font-size:clamp(22px,2.5vw,30px)}
+.ask{background:var(--dusk-soft);border-radius:10px;padding:10px 14px;display:grid;gap:4px}
+.ask>b{color:var(--dusk);font-size:13px;letter-spacing:.06em}
+.ask p{margin:0}
+.ask .a{color:var(--heal);font-weight:500}
+.story-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.dots{display:flex;gap:6px}
+.dots button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:13px;font-variant-numeric:tabular-nums;padding:0}
+.dots button[aria-current="step"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.sv .heat{transition:opacity .8s}
+.sv .v-sick{transition:opacity .7s}
+.sv .v-well{opacity:0;transition:opacity .9s .25s}
+.sv .healed>.v-sick{opacity:0}
+.sv .healed>.v-well{opacity:1}
+.sv .spark{opacity:0;transition:opacity .5s .9s}
+.sv .healed .spark{opacity:1}
+.sv .glow{opacity:0;transition:opacity 1.2s}
+.sv.glow-on .glow{opacity:1}
+.sickp{cursor:pointer}
+.sickp:focus-visible{outline:none}
+.sickp:focus-visible .v-sick{filter:drop-shadow(0 0 4px #fff)}
+.sv .sky-night{opacity:0;transition:opacity 6s ease}
+.sv .stars{opacity:0;transition:opacity 3s ease 4s}
+.sv .night-tint{opacity:0;transition:opacity 6s ease}
+.sv .lamp{opacity:0;transition:opacity 2s ease 3s}
+.sv .sun{transition:transform 6s ease-in}
+.sv.dusk-on .sky-night,.sv.dusk-on .stars,.sv.dusk-on .lamp{opacity:1}
+.sv.dusk-on .night-tint{opacity:.3}
+.sv.dusk-on .sun{transform:translateY(210px)}
+
+/* ---------- checkup ---------- */
+.fever3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.fever3,.qcards{grid-template-columns:minmax(0,1fr)}}
+.fv{display:grid;gap:8px;align-content:start;padding:16px 18px}
+.fv-tag{font-family:var(--font-kai);font-size:22px;font-weight:700;color:var(--fever)}
+.fv p{margin:0}
+.fv-sym{line-height:1.6}
+.fv-cure{color:var(--heal);font-weight:500;border-top:1px dashed var(--line);padding-top:8px}
+.sorter{display:grid;gap:14px}
+.sort-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.sort-top h3{margin:0;font-size:clamp(19px,2vw,23px)}
+.sort-msg{margin:0;font-weight:500;min-height:1.7em}
+.sort-msg.good{color:var(--heal)}
+.sort-msg.bad{color:var(--fever)}
+.sort-msg.done{color:var(--heal);font-family:var(--font-kai);font-size:1.2em}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:10px}
+.chip{border:2px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 14px;cursor:pointer;font-size:16px;line-height:1.45;text-align:left}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--surface-2);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 28%,transparent)}
+.chip.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.zones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.zones{grid-template-columns:minmax(0,1fr)}}
+.zone{border:2px dashed var(--zc);background:var(--zs);border-radius:14px;padding:12px 14px;min-height:170px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.zone:hover{border-style:solid}
+.zh{display:flex;align-items:baseline;gap:8px;font-weight:700;color:var(--zc)}
+.zh b{font-family:var(--font-kai);font-size:34px;line-height:1}
+.zd{font-size:13.5px;color:var(--muted)}
+.zl{display:flex;flex-direction:column;gap:5px;margin-top:4px}
+.placed{background:var(--surface);border-radius:8px;padding:4px 10px;font-size:14.5px;line-height:1.5;color:var(--ink)}
+
+/* ---------- verse ---------- */
+.verse{display:grid;gap:14px;justify-items:center;text-align:center}
+.vtabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.vtabs button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 16px;cursor:pointer;font-variant-numeric:tabular-nums}
+.vtabs button[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:700}
+.vbox{font-family:var(--font-kai);font-size:clamp(26px,4vw,50px);line-height:2;margin:0;padding:10px 0;max-width:20em}
+.tok{display:inline-block;padding:0 .06em;border-radius:6px}
+.tok.hid{color:transparent;border-bottom:3px solid var(--muted);cursor:pointer;border-radius:0;margin-inline:.12em}
+.tok.hid.peek{color:var(--accent);border-bottom-color:var(--accent)}
+.punc{display:inline-block}
+.vref{margin:0;color:var(--muted);font-size:17px}
+.vctl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.vlevel{display:grid;gap:4px;justify-items:center;min-width:8em}
+.vlevel span{font-size:14px;color:var(--muted)}
+.vbar{display:flex;gap:5px}
+.vbar i{width:22px;height:8px;border-radius:4px;background:var(--line)}
+.vbar i.on{background:var(--accent)}
+.verse .hint{margin:0;color:var(--muted);font-size:14px}
+
+/* ---------- pray ---------- */
+.pray-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:820px){.pray-grid{grid-template-columns:minmax(0,1fr)}}
+.pform{display:grid;gap:8px}
+.pform h3{margin:0 0 4px;font-size:18px}
+.pform label{font-size:14px;color:var(--muted)}
+.pform input[type=text]{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:8px 10px;width:100%}
+.pform fieldset{border:0;margin:0;padding:0;display:grid;gap:6px}
+.pform legend{font-size:14px;color:var(--muted);padding:0;margin-bottom:6px}
+.parts{display:flex;gap:6px}
+.parts label{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;border:2px solid var(--line);border-radius:10px;padding:6px;cursor:pointer;color:var(--ink);font-size:15px}
+.parts input{position:absolute;opacity:0;pointer-events:none}
+.parts label:has(input:checked){border-color:var(--zc);background:var(--zs);color:var(--zc);font-weight:700}
+.parts label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+.parts b{font-family:var(--font-kai);font-size:20px}
+.wall-wrap{display:grid;gap:12px;min-width:0}
+.wall-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.wall-head h3{margin:0;font-size:18px}
+.wall-head div{display:flex;gap:8px}
+.wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:620px){.wall{grid-template-columns:minmax(0,1fr)}}
+.wcol{background:var(--zs);border-radius:12px;padding:10px;display:grid;gap:8px;align-content:start;min-height:140px}
+.wcol h4{margin:0;color:var(--zc);display:flex;align-items:baseline;gap:6px;font-size:14px}
+.wcol h4 b{font-family:var(--font-kai);font-size:24px}
+.wcol ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pcard{background:var(--surface);border-radius:10px;padding:8px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 6px;box-shadow:var(--shadow)}
+.pcard .who{font-weight:700;font-size:14.5px}
+.pcard .need{grid-column:1;font-size:15px;line-height:1.5}
+.pcard .x{grid-row:1/3;grid-column:2;border:0;background:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;padding:2px 4px;align-self:start}
+.sample{font-size:11px;font-weight:500;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-left:6px}
+.empty{color:var(--muted);font-size:13.5px;margin:0}
+.praying{display:grid;gap:10px;text-align:center;border:2px solid var(--heal)}
+.praying .pmeta{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.praying .ptext{font-family:var(--font-kai);font-size:clamp(21px,2.6vw,30px);line-height:1.7;margin:0}
+.praying .pctl{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.practice{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;align-items:center}
+@media (max-width:620px){.practice{grid-template-columns:minmax(0,1fr)}}
+.practice .ptitle{font-family:var(--font-kai);font-size:22px;font-weight:700;color:var(--heal)}
+.practice p{margin:0}
+.takeaway{font-family:var(--font-kai);font-size:clamp(22px,3vw,34px);text-align:center;margin:8px 0 0;color:var(--heal);line-height:1.5}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <p class="eyebrow">兒童排 · 國小五、六年級 · 40 分鐘</p>
+      <h1>彼得岳母和各樣患病的人得醫治</h1>
+    </div>
+    <div class="tools">
+      <div class="timer" id="timer" hidden>
+        <span class="lbl">本段</span><span class="time" id="timer-time">0:00</span>
+        <button id="timer-go" class="go" type="button">開始</button>
+        <button id="timer-reset" type="button" aria-label="重新計時">重來</button>
+      </div>
+      <div class="toggle" id="mode" role="group" aria-label="顯示模式">
+        <button type="button" data-mode="prep" aria-pressed="true">備課</button>
+        <button type="button" data-mode="proj" aria-pressed="false">投影</button>
+      </div>
+      <button class="btn" id="fs" type="button">全螢幕</button>
+    </div>
+  </div>
+  <nav class="timeline wrap" id="timeline" aria-label="課程時間軸"></nav>
+</header>
+
+<main class="wrap">
+
+<!-- ======================= 教案 ======================= -->
+<section data-route="plan">
+  <div class="plan-head">
+    <p class="eyebrow">教案</p>
+    <h2>彼得岳母和各樣患病的人得醫治</h2>
+    <p class="core">把難處帶到主面前，讓祂摸你，你就能起來服事祂。</p>
+    <p class="how">上課時切到右上角的「投影」，教師提示會收起來。用上方時間軸切換段落，每段都有自己的計時器。故事可以用鍵盤 ← → 或簡報筆翻頁。</p>
+  </div>
+  <div class="plan-body">
+    <div class="plan-main">
+      <div class="blk">
+        <h3>負擔</h3>
+        <p>主耶穌到了彼得家，他的岳母正患熱病躺著。主滿帶憐恤地摸她的手，燒就退了，她就起來服事主。黃昏時，主又醫治了一切到祂跟前來的人，應驗了以賽亞的話：「祂親自取去了我們的軟弱，擔當了我們的疾病。」我們一切的軟弱、疾病和難處，主都能同情體恤。我們可以把難處帶到祂面前，讓祂醫治我們，並使我們有力量起來服事祂。</p>
+      </div>
+      <div class="blk">
+        <h3>教學目標</h3>
+        <ol>
+          <li>能說出主在彼得家醫治岳母、黃昏時醫治全城病人的經過，並說出她得醫治後「起來服事」的意義。</li>
+          <li>能分辨人在靈、魂、體三方面都會「生病」，並舉出自己生活中的例子。</li>
+          <li>能說明主在十字架上取去了我們的軟弱、擔當了我們的疾病，只要向祂敞開就能得醫治。</li>
+          <li>願意為自己或別人靈、魂、體的軟弱向主禱告，並在這一週操練。</li>
+        </ol>
+      </div>
+      <div class="blk">
+        <h3>教學流程</h3>
+        <div class="tbl-wrap">
+          <table class="flow">
+            <thead><tr><th>時間</th><th>段落</th><th>做什麼</th><th>互動頁</th></tr></thead>
+            <tbody>
+              <tr><td class="t">0–3 分<span class="mbar" style="--m:3"></span></td><td class="seg">開場</td><td>唱〈我心憂愁麼〉；請 1～2 人分享上週探望、代禱或病得醫治的經歷</td><td class="go"><a href="#open">開場 →</a></td></tr>
+              <tr><td class="t">3–8 分<span class="mbar" style="--m:5"></span></td><td class="seg">發燒經驗</td><td>體溫計拉到不同溫度說感覺；討論人為什麼會生病、生病時除了看醫生還能做什麼</td><td class="go"><a href="#warmup">體溫計 →</a></td></tr>
+              <tr><td class="t">8–12 分<span class="mbar" style="--m:4"></span></td><td class="seg">主是醫生</td><td>主到稅吏馬太家坐席；全班唸太九12；比較地上的醫生和主耶穌</td><td class="go"><a href="#doctor">出診單 →</a></td></tr>
+              <tr><td class="t">12–22 分<span class="mbar" style="--m:10"></span></td><td class="seg">故事</td><td>六幕：會堂 → 彼得家 → 摸她的手 → 起來服事 → 日落全城的人來 → 應驗以賽亞的話。學生上台按按鈕、點病人</td><td class="go"><a href="#story">互動故事 →</a></td></tr>
+              <tr><td class="t">22–30 分<span class="mbar" style="--m:8"></span></td><td class="seg">全人健檢</td><td>三種「熱病」：身體、脾氣、著迷；分兩隊玩體、魂、靈分類遊戲</td><td class="go"><a href="#checkup">分類遊戲 →</a></td></tr>
+              <tr><td class="t">30–35 分<span class="mbar" style="--m:5"></span></td><td class="seg">背經</td><td>三節背經，一次遮多一點，男女對唸、上台挑戰</td><td class="go"><a href="#verse">背經挑戰 →</a></td></tr>
+              <tr><td class="t">35–40 分<span class="mbar" style="--m:5"></span></td><td class="seg">禱告</td><td>寫代禱卡、兩三人一組禱告；說明本週生活操練</td><td class="go"><a href="#pray">代禱牆 →</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="blk">
+        <h3>教學提醒</h3>
+        <ul class="notes">
+          <li><b>罪與疾病：</b>課文說疾病是人墮落犯罪的結果，這是指全人類的光景，不是說某個人生病就是他或家人做錯了事（約九3）。班上如果有家人久病的孩子，講到這裡要特別溫柔。</li>
+          <li><b>禱告和就醫：</b>鼓勵孩子生病時呼求主、向主禱告，也要聽父母的安排看醫生、吃藥，兩者不衝突。</li>
+          <li><b>尊重隱私：</b>代禱卡可以不寫名字，不勉強公開分享。涉及家庭狀況的需要，課後再個別關心。</li>
+          <li><b>五、六年級：</b>這個年紀喜歡挑戰，不喜歡被當成小小孩。分隊比賽、上台操作、遮字挑戰比單純講述有效；也可以請一位學生幫忙操作投影。</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h3>生活操練</h3>
+        <p>這一週，每天選一個人（自己、家人或同學），為他靈、魂或身體的一項需要向主禱告一句話。下週開場時分享經歷。</p>
+      </div>
+    </div>
+    <aside class="plan-side">
+      <div class="side-card">
+        <h3>經文</h3>
+        <p style="margin:0">太八14～17，九12；可一29～34；路四18、38～41</p>
+      </div>
+      <div class="side-card">
+        <h3>背經</h3>
+        <ul class="mv">
+          <li>強健的人用不著醫生，有病的人才用得著。<span>太九12</span></li>
+          <li>耶穌摸她的手，燒就退了；她便起來服事耶穌。<span>太八15</span></li>
+          <li>祂親自取去了我們的軟弱，擔當了我們的疾病。<span>太八17下</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>詩歌</h3>
+        <p style="margin:0">〈我心憂愁麼〉，親子手冊乙本 16 頁</p>
+      </div>
+      <div class="side-card">
+        <h3>課前準備</h3>
+        <ul>
+          <li>投影機或電視，開好這一頁並切到「投影」</li>
+          <li>實體體溫計或耳溫槍（暖身道具）</li>
+          <li>便利貼和筆，每人一張</li>
+          <li>親子手冊乙本</li>
+          <li>白板，分隊計分用</li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>影片（選用）</h3>
+        <ul>
+          <li>本頁的「故事」段就是六幕互動動畫，不需要另外放影片。</li>
+          <li>想多放一段的話：英文兒童動畫《Jesus Wonder》第 1 季第 10 集〈Healing in Peter's House〉，依據路四38～41，約 15 分鐘。比本課時段長，建議只挑 2～3 分鐘播放，或請孩子課後在家看。</li>
+          <li><a href="https://tubitv.com/tv-shows/510189/s01-e10-healing-in-peter-s-house" target="_blank" rel="noopener">Tubi 上的這一集</a>（在台灣可能無法播放）</li>
+          <li><a href="https://www.youtube.com/results?search_query=Jesus+Wonder+Healing+in+Peter%27s+House" target="_blank" rel="noopener">在 YouTube 搜尋這一集</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 開場 ======================= -->
+<section data-route="open" hidden>
+  <div class="seg-head"><span class="when">0–3 分</span><h2>開場：唱詩與分享</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="card open-stage">
+        <p class="eyebrow">今天的故事</p>
+        <h3 class="big">彼得岳母和各樣患病的人得醫治</h3>
+        <p class="refs">太八14～17　·　太九12　·　可一29～34　·　路四38～41</p>
+        <div class="open-grid">
+          <div class="mini"><span class="tag">唱詩</span><b class="kai">我心憂愁麼</b><span>親子手冊乙本 16 頁</span></div>
+          <div class="mini"><span class="tag">分享</span><b>上週你為誰禱告了？</b><span>有沒有生病時呼求主、被主醫治的經歷？</span></div>
+        </div>
+        <p class="quest">今天要找答案：<b>主耶穌是一位怎樣的醫生？</b></p>
+      </div>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>3 分鐘</h3>
+      <ol>
+        <li>唱〈我心憂愁麼〉，可以唱兩遍，第二遍放慢。</li>
+        <li>請 1～2 位分享上週探望或為人代禱的經歷，或自己病得醫治的見證。每人 1 分鐘以內。</li>
+        <li>拋出今天的問題：「主耶穌是一位怎樣的醫生？」請大家上課時找答案。</li>
+      </ol>
+      <p class="trans"><b>轉場</b>「先來量量體溫。你發燒過嗎？」</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 暖身：體溫計 ======================= -->
+<section data-route="warmup" hidden>
+  <div class="seg-head"><span class="when">3–8 分</span><h2>發燒是什麼感覺？</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="card warm">
+        <div id="warm-thermo"></div>
+        <div class="readout">
+          <div class="temp-row">
+            <div class="temp-big" id="temp-big">36.6<small>°C</small></div>
+            <svg viewBox="0 0 120 124" class="face" id="face" aria-hidden="true">
+              <g id="f-heat" opacity="0" stroke="#E0482F" stroke-width="3" fill="none" stroke-linecap="round"><path d="M40,18 q5,-5 0,-9 q-5,-4 0,-8"/><path d="M60,15 q5,-5 0,-9 q-5,-4 0,-8"/><path d="M80,18 q5,-5 0,-9 q-5,-4 0,-8"/></g>
+              <circle cx="60" cy="74" r="44" fill="#F2C9A0"/>
+              <path d="M17,64 Q20,26 60,26 Q100,26 103,64 Q88,44 60,44 Q32,44 17,64Z" fill="#3B2A20"/>
+              <circle id="f-ck1" cx="35" cy="86" r="8" fill="#E0482F" opacity="0"/><circle id="f-ck2" cx="85" cy="86" r="8" fill="#E0482F" opacity="0"/>
+              <g id="f-open"><circle cx="44" cy="72" r="4.6" fill="#2A1E16"/><circle cx="76" cy="72" r="4.6" fill="#2A1E16"/></g>
+              <g id="f-shut" opacity="0" stroke="#2A1E16" stroke-width="3" fill="none" stroke-linecap="round"><path d="M38,73 q6,5 12,0"/><path d="M70,73 q6,5 12,0"/></g>
+              <path id="f-mouth" d="M44,94 Q60,108 76,94" stroke="#2A1E16" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path id="f-sweat" opacity="0" d="M100,52 q7,11 0,15 q-7,-4 0,-15z" fill="#7EC3E8"/>
+            </svg>
+            <span class="pill ok" id="band-pill">正常</span>
+          </div>
+          <p class="feel" id="band-feel">精神很好，吃得下，想出去玩。</p>
+          <p class="band-note" id="band-note" hidden></p>
+          <div class="slider-row">
+            <label for="temp" class="eyebrow">拉拉看：體溫幾度？</label>
+            <input type="range" id="temp" min="36" max="42" step="0.1" value="36.6">
+            <div class="presets">
+              <button class="btn" type="button" data-t="36.5">36.5 度</button>
+              <button class="btn" type="button" data-t="37.8">37.8 度</button>
+              <button class="btn" type="button" data-t="38.6">38.6 度</button>
+              <button class="btn" type="button" data-t="40">40 度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="qcards">
+        <div class="card qcard"><span class="qn">想一想 1</span><p class="q">發燒的時候，爸爸媽媽怎麼幫你？</p></div>
+        <div class="card qcard"><span class="qn">想一想 2</span><p class="q">人為什麼會生病？</p><button class="link-btn reveal" type="button" style="justify-self:start">看參考答案</button><p class="a" hidden>細菌、病毒、太累、受傷……聖經還告訴我們更深的原因：人犯罪墮落以後，罪和死進到世界裡，人就會軟弱、生病。</p></div>
+        <div class="card qcard"><span class="qn">想一想 3</span><p class="q">生病的時候，除了看醫生，還會想到要做什麼？</p><button class="link-btn reveal" type="button" style="justify-self:start">看參考答案</button><p class="a" hidden>呼求主耶穌，向主禱告！</p></div>
+      </div>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>5 分鐘</h3>
+      <ol>
+        <li>拿出實體體溫計或耳溫槍，假裝幫一位學生量體溫，引起注意。</li>
+        <li>把畫面上的體溫計拉到 36.5、38、40 度，請學生說說那時的感覺。也可以請學生上台拉。</li>
+        <li>依序問「想一想」三題，答案按了才出現。</li>
+        <li>第 2 題學生多半會說細菌、病毒。補充：聖經說更深的原因是人墮落犯罪後，罪和死進到世界裡（羅五12）。</li>
+      </ol>
+      <p class="warn"><b>留意</b>不要讓孩子以為「誰生病就是誰做錯事」（約九3）。禱告和看醫生也不衝突。</p>
+      <p class="trans"><b>轉場</b>「有一位醫生很特別，祂不等病人來，祂自己去找病人。」</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 主是醫生 ======================= -->
+<section data-route="doctor" hidden>
+  <div class="seg-head"><span class="when">8–12 分</span><h2>主是那來找病人的醫生</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="doc-grid">
+        <article class="card slip">
+          <header class="slip-head"><span class="kai">出診單</span><span class="slip-no">太九9～13</span></header>
+          <dl>
+            <div><dt>醫生</dt><dd>耶穌</dd></div>
+            <div><dt>看診方式</dt><dd>不用掛號，親自上門</dd></div>
+            <div><dt>病人</dt><dd>有病的人：知道自己需要祂的人</dd></div>
+            <div><dt>出診紀錄</dt><dd><ol><li>稅吏馬太的家：和稅吏、罪人一起吃飯</li><li>彼得的家：岳母發高燒</li><li>黃昏：全城的人聚在門前</li></ol></dd></div>
+            <div><dt>下一站</dt><dd class="next-stop">你和你的家</dd></div>
+            <div><dt>診療費</dt><dd>0 元，祂親自擔當了我們的疾病</dd></div>
+          </dl>
+          <p class="slip-verse kai">強健的人用不著醫生，有病的人才用得著。<span>太九12</span></p>
+        </article>
+        <div class="compare">
+          <p class="hint">點一下，看看主耶穌有什麼不同</p>
+          <button class="cmp" type="button"><span class="cmp-q">怎麼找到醫生？</span><span class="cmp-a"><i>地上的醫生</i>病人自己去掛號、排隊等</span><span class="cmp-b"><i>主耶穌</i><span class="qm">？</span><span class="ans">祂主動到病人家裡，也到我們家</span></span></button>
+          <button class="cmp" type="button"><span class="cmp-q">要多久才好？</span><span class="cmp-a"><i>地上的醫生</i>打針、吃藥，常常要好幾天</span><span class="cmp-b"><i>主耶穌</i><span class="qm">？</span><span class="ans">摸一下，燒就退了，立刻起來</span></span></button>
+          <button class="cmp" type="button"><span class="cmp-q">要付多少錢？</span><span class="cmp-a"><i>地上的醫生</i>掛號費、醫藥費</span><span class="cmp-b"><i>主耶穌</i><span class="qm">？</span><span class="ans">白白醫治，祂自己擔當了我們的疾病</span></span></button>
+          <button class="cmp" type="button"><span class="cmp-q">能醫治哪裡？</span><span class="cmp-a"><i>地上的醫生</i>主要是身體</span><span class="cmp-b"><i>主耶穌</i><span class="qm">？</span><span class="ans">靈、魂、身體都能醫治</span></span></button>
+        </div>
+      </div>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>4 分鐘</h3>
+      <ol>
+        <li>簡述太九9～13：主在稅關上呼召馬太，後來到他家坐席。猶太人把稅吏看作罪人，不和他們來往，更不會去他們家作客。</li>
+        <li>法利賽人批評主，主回答：「強健的人用不著醫生，有病的人才用得著。」全班一起唸。</li>
+        <li>請學生上台點右邊四張卡，比較地上的醫生和主耶穌。</li>
+      </ol>
+      <p class="qa"><b>可以問</b>誰是「有病的人」？<span>我們都是。罪在人裡面，使人生病；主就是為我們來的醫生。</span></p>
+      <p class="trans"><b>轉場</b>「這位醫生下一站到了誰的家？」</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 故事 ======================= -->
+<section data-route="story" hidden>
+  <div class="seg-head"><span class="when">12–22 分</span><h2>故事：彼得岳母和全城的病人</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="stage" id="stage">
+        <svg id="stage-svg" class="sv" viewBox="0 0 800 450" role="img" aria-label="故事插圖"></svg>
+        <div class="thermo-mini" id="tm" hidden><div id="tm-svg"></div><div class="tm-read"><span id="tm-val">40.0</span>°C</div></div>
+        <div class="counter" id="counter" hidden><span>已醫治 <b id="cnt">0</b> / 12</span><button class="btn" id="heal-all" type="button">全部醫治</button></div>
+        <div class="stage-act" id="act" hidden><button class="big-btn" id="act-btn" type="button">摸她的手</button></div>
+        <div class="stage-toast" id="toast" hidden></div>
+      </div>
+      <div class="narr">
+        <div class="narr-top"><span id="sc-no">第 1 幕／共 6 幕</span><span id="sc-ref"></span></div>
+        <h3 id="sc-title"></h3>
+        <p class="narr-text" id="sc-text"></p>
+        <div class="ask"><b>問一問</b><p id="sc-q"></p><button class="link-btn" id="sc-a-btn" type="button" style="justify-self:start">看參考答案</button><p class="a" id="sc-a" hidden></p></div>
+      </div>
+      <div class="story-nav">
+        <button class="btn" id="sc-prev" type="button">← 上一幕</button>
+        <div class="dots" id="sc-dots"></div>
+        <button class="btn primary" id="sc-next" type="button">下一幕 →</button>
+      </div>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>10 分鐘</h3>
+      <ol>
+        <li>六幕，每幕約 1.5 分鐘。可以用鍵盤 ← → 或簡報筆翻頁。</li>
+        <li>第 3 幕請一位學生上台按「摸她的手」，大家一起看體溫降下來。</li>
+        <li>第 5 幕請幾位學生輪流點病人，讓主一一醫治；時間不夠就按「全部醫治」。</li>
+        <li>用簡報筆時，第 3、5 幕按第一下會先做動作，按第二下才換幕。</li>
+        <li>每幕的「問一問」挑一題問就好，答案按了才出現。</li>
+      </ol>
+      <p class="qa"><b>三個重點</b><span>主主動來找她；主一摸，燒就退了；她立刻起來服事。</span></p>
+      <p class="trans"><b>轉場</b>「其實我們也常常『發燒』，只是體溫計量不出來。」</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 全人健檢 ======================= -->
+<section data-route="checkup" hidden>
+  <div class="seg-head"><span class="when">22–30 分</span><h2>全人健康檢查</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="fever3">
+        <article class="card fv"><span class="fv-tag">身體的熱病</span><p class="fv-sym">發燒到 40 度，頭昏眼花，躺在床上起不來。</p><p class="fv-cure">主摸她的手，燒退了，她起來服事。</p></article>
+        <article class="card fv"><span class="fv-tag">脾氣的熱病</span><p class="fv-sym">一生氣，臉脹得通紅，像一團火球要燒起來，管不住自己。</p><p class="fv-cure">讓主來降溫，火爆的脾氣冷卻下來。</p></article>
+        <article class="card fv"><span class="fv-tag">著迷的熱病</span><p class="fv-sym">打電動、看漫畫停不下來，叫吃飯、叫休息都聽不見。</p><p class="fv-cure">讓主斥責這個「燒」，恢復正常作息，能幫助家人。</p></article>
+      </div>
+      <div class="card sorter">
+        <div class="sort-top"><h3>這是哪裡生病了？</h3><button class="btn" id="sort-reset" type="button">重新洗牌</button></div>
+        <p class="sort-msg" id="sort-msg" aria-live="polite"></p>
+        <div class="pool" id="pool"></div>
+        <div class="zones">
+          <button class="zone" type="button" data-z="body" style="--zc:var(--body);--zs:var(--body-soft)"><span class="zh"><b>體</b>身體</span><span class="zd">看得見、摸得著的身體</span><span class="zl"></span></button>
+          <button class="zone" type="button" data-z="soul" style="--zc:var(--soul);--zs:var(--soul-soft)"><span class="zh"><b>魂</b>心思・情感・意志</span><span class="zd">想法、心情，還有做決定、管住自己</span><span class="zl"></span></button>
+          <button class="zone" type="button" data-z="spirit" style="--zc:var(--spirit);--zs:var(--spirit-soft)"><span class="zh"><b>靈</b>人最深的部分</span><span class="zd">用來接觸神、和主交通</span><span class="zl"></span></button>
+        </div>
+      </div>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>8 分鐘</h3>
+      <ol>
+        <li>（2 分）看三張「熱病」卡。問：「你發脾氣的時候，臉像不像發燒？」「媽媽叫你吃飯你聽不見，是不是也像病了？」</li>
+        <li>（4 分）分兩隊輪流上台：先點一張卡片，再點「體、魂、靈」其中一格，答對加一分。</li>
+        <li>（2 分）收尾：「這些病，主都能醫治。你最近最常發的是哪一種燒？」請學生在心裡想，不必公開說，等一下寫在代禱卡上。</li>
+      </ol>
+      <p class="qa"><b>魂的三部分</b><span>心思是想法，情感是心情，意志是做決定、管住自己。</span></p>
+      <p class="trans"><b>轉場</b>「把今天的話藏在心裡，發燒的時候就想得起來。」</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 背經 ======================= -->
+<section data-route="verse" hidden>
+  <div class="seg-head"><span class="when">30–35 分</span><h2>背經挑戰</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="card verse">
+        <div class="vtabs" id="vtabs" role="tablist" aria-label="選擇經節"></div>
+        <p class="vbox" id="vbox" aria-live="polite"></p>
+        <p class="vref" id="vref"></p>
+        <div class="vctl">
+          <button class="btn" id="v-easy" type="button">簡單一點</button>
+          <div class="vlevel"><span id="v-lvl">全部顯示</span><div class="vbar" id="v-bar"><i></i><i></i><i></i><i></i></div></div>
+          <button class="btn primary" id="v-hard" type="button">再遮一些</button>
+        </div>
+        <p class="hint">背不出來的時候，點一下空格可以偷看。</p>
+      </div>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>5 分鐘</h3>
+      <ol>
+        <li>三節輪流背。每節先全班唸兩遍，再按「再遮一些」。</li>
+        <li>男生女生對唸：男生唸前半，女生接後半，再交換。</li>
+        <li>遮到全部空白還背得出來的同學，可以上台挑戰。</li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- ======================= 禱告 ======================= -->
+<section data-route="pray" hidden>
+  <div class="seg-head"><span class="when">35–40 分</span><h2>把難處帶到主面前</h2></div>
+  <div class="seg-grid">
+    <div class="stage-area">
+      <div class="pray-grid">
+        <form class="card pform" id="pform">
+          <h3>代禱卡</h3>
+          <label for="p-who">為誰禱告</label>
+          <input type="text" id="p-who" maxlength="12" placeholder="我、奶奶、同學（可不寫名字）" autocomplete="off">
+          <fieldset>
+            <legend>哪裡需要醫治</legend>
+            <div class="parts">
+              <label style="--zc:var(--body);--zs:var(--body-soft)"><input type="radio" name="part" id="p-body" value="body" checked><b>體</b>身體</label>
+              <label style="--zc:var(--soul);--zs:var(--soul-soft)"><input type="radio" name="part" id="p-soul" value="soul"><b>魂</b>心情</label>
+              <label style="--zc:var(--spirit);--zs:var(--spirit-soft)"><input type="radio" name="part" id="p-spirit" value="spirit"><b>靈</b>靈</label>
+            </div>
+          </fieldset>
+          <label for="p-need">需要什麼</label>
+          <input type="text" id="p-need" maxlength="30" placeholder="例如：腳受傷、考試很緊張" autocomplete="off" required>
+          <button class="btn primary" type="submit">貼到代禱牆</button>
+        </form>
+        <div class="wall-wrap">
+          <div class="wall-head">
+            <h3>代禱牆</h3>
+            <div><button class="btn primary" id="p-start" type="button">一起禱告</button><button class="btn" id="p-clear" type="button">清除全部</button></div>
+          </div>
+          <div class="card praying" id="praying" hidden>
+            <span class="pmeta" id="pr-meta"></span>
+            <p class="ptext" id="pr-text"></p>
+            <div class="pctl"><button class="btn" id="pr-prev" type="button">← 上一張</button><button class="btn primary" id="pr-next" type="button">下一張 →</button><button class="btn" id="pr-close" type="button">結束</button></div>
+          </div>
+          <div class="wall" id="wall">
+            <div class="wcol" data-part="body" style="--zc:var(--body);--zs:var(--body-soft)"><h4><b>體</b>身體</h4><ul></ul></div>
+            <div class="wcol" data-part="soul" style="--zc:var(--soul);--zs:var(--soul-soft)"><h4><b>魂</b>心思・情感・意志</h4><ul></ul></div>
+            <div class="wcol" data-part="spirit" style="--zc:var(--spirit);--zs:var(--spirit-soft)"><h4><b>靈</b>和主的交通</h4><ul></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="card practice">
+        <span class="ptitle">本週操練</span>
+        <p>每天選一個人（自己、家人或同學），為他靈、魂或身體的一項需要向主禱告一句話。下週來分享主怎樣回應你。</p>
+      </div>
+      <p class="takeaway">把難處帶到主面前，讓祂摸你，你就能起來服事祂。</p>
+    </div>
+    <aside class="teacher">
+      <h3><span class="tag-t">教師提示</span>5 分鐘</h3>
+      <ol>
+        <li>發便利貼，每人寫一項自己或家人靈、魂、體的需要，可以不寫名字。</li>
+        <li>老師挑幾張輸入代禱牆，其他貼在白板上。</li>
+        <li>按「一起禱告」，兩三人一組，照畫面上的句子為一張卡禱告一句。</li>
+        <li>說明本週操練，下週開場時分享。</li>
+      </ol>
+      <p class="warn"><b>留意</b>不勉強公開分享。涉及家庭狀況的需要，課後再個別關心。</p>
+      <p class="trans">代禱牆只存在這台電腦的瀏覽器裡，不會傳到別處。下課後可以按「清除全部」。</p>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- segments & timeline ---------- */
+const SEGS=[
+  {id:'open',label:'開場',min:3},
+  {id:'warmup',label:'發燒經驗',min:5},
+  {id:'doctor',label:'主是醫生',min:4},
+  {id:'story',label:'故事',min:10},
+  {id:'checkup',label:'全人健檢',min:8},
+  {id:'verse',label:'背經',min:5},
+  {id:'pray',label:'禱告',min:5}
+];
+let acc=0; SEGS.forEach(s=>{s.from=acc;acc+=s.min;s.to=acc;});
+const ROUTES=['plan',...SEGS.map(s=>s.id)];
+$('#timeline').innerHTML=`<a class="tl plan-tl" href="#plan"><span class="t">備課</span><span class="l">教案</span></a>`+
+  SEGS.map(s=>`<a class="tl" href="#${s.id}" style="--m:${s.min}"><span class="t">${s.from}–${s.to} 分</span><span class="l">${s.label}</span></a>`).join('');
+SEGS.forEach((s,i)=>{
+  const sec=$(`section[data-route="${s.id}"]`); if(!sec) return;
+  const prev=i>0?SEGS[i-1]:null, next=i<SEGS.length-1?SEGS[i+1]:null;
+  const f=document.createElement('div'); f.className='seg-foot';
+  f.innerHTML=(prev?`<a class="btn" href="#${prev.id}">← ${prev.label}</a>`:`<a class="btn" href="#plan">← 教案</a>`)+
+    (next?`<a class="btn primary" href="#${next.id}">下一段：${next.label} →</a>`:`<a class="btn" href="#plan">回到教案</a>`);
+  sec.appendChild(f);
+});
+
+/* ---------- timer ---------- */
+const timer=(()=>{
+  const box=$('#timer'),tEl=$('#timer-time'),go=$('#timer-go'),rst=$('#timer-reset');
+  let total=0,left=0,endAt=0,iv=null;
+  const fmt=sec=>{const r=Math.round(sec),a=Math.abs(r);return (r<0?'+':'')+Math.floor(a/60)+':'+String(a%60).padStart(2,'0');};
+  const paint=()=>{tEl.textContent=fmt(left);box.classList.toggle('over',Math.round(left)<=0);go.textContent=iv?'暫停':'開始';};
+  const tick=()=>{left=(endAt-Date.now())/1000;paint();};
+  const start=()=>{endAt=Date.now()+left*1000;iv=setInterval(tick,250);paint();};
+  const stop=()=>{clearInterval(iv);iv=null;paint();};
+  go.onclick=()=>iv?stop():start();
+  rst.onclick=()=>{stop();left=total;paint();};
+  return{load(seg){stop();if(!seg){box.hidden=true;return;}box.hidden=false;total=left=seg.min*60;paint();}};
+})();
+
+/* ---------- mode & fullscreen ---------- */
+function setMode(m){document.body.classList.toggle('proj',m==='proj');$$('#mode button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));store.set('peterHeal.mode',m);}
+$$('#mode button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+setMode(store.get('peterHeal.mode')==='proj'?'proj':'prep');
+const fsBtn=$('#fs');
+if(!document.documentElement.requestFullscreen) fsBtn.hidden=true;
+fsBtn.addEventListener('click',()=>{
+  if(document.fullscreenElement){document.exitFullscreen&&document.exitFullscreen().catch(()=>{});return;}
+  try{const p=document.documentElement.requestFullscreen();p&&p.catch(()=>{fsBtn.textContent='無法全螢幕';});}catch(e){fsBtn.textContent='無法全螢幕';}
+});
+document.addEventListener('fullscreenchange',()=>{fsBtn.textContent=document.fullscreenElement?'離開全螢幕':'全螢幕';});
+
+/* ---------- router ---------- */
+let cur=null;
+function route(){
+  let id=location.hash.replace('#','');
+  if(!ROUTES.includes(id)) id='plan';
+  $$('section[data-route]').forEach(s=>s.hidden=s.dataset.route!==id);
+  $$('.tl').forEach(a=>{if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  timer.load(SEGS.find(s=>s.id===id)||null);
+  if(id==='story') story.go(0);
+  if(cur!==null&&cur!==id) window.scrollTo(0,0);
+  cur=id;
+  const a=$('.tl[aria-current]'),nav=$('#timeline');
+  if(a&&nav.scrollWidth>nav.clientWidth) nav.scrollLeft=a.offsetLeft-nav.clientWidth/2+a.offsetWidth/2;
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- reveal buttons ---------- */
+$$('.reveal').forEach(b=>b.addEventListener('click',()=>{const a=b.nextElementSibling;a.hidden=!a.hidden;b.textContent=a.hidden?'看參考答案':'收起答案';}));
+$$('.cmp').forEach(b=>b.addEventListener('click',()=>{b.classList.toggle('on');}));
+
+/* ---------- thermometer ---------- */
+const T0=36,T1=42,ty=t=>350-(t-T0)/(T1-T0)*300;
+const mixOK=window.CSS&&CSS.supports&&CSS.supports('color','color-mix(in oklab, red 50%, blue)');
+function thermoSVG(){
+  let ticks='';
+  for(let k=0;k<=12;k++){const t=T0+k*.5,y=ty(t).toFixed(1),major=k%2===0;
+    ticks+=`<line x1="86" x2="${major?102:95}" y1="${y}" y2="${y}" class="th-tick"/>`;
+    if(major) ticks+=`<text x="106" y="${(+y+5).toFixed(1)}" class="th-num">${t}</text>`;}
+  const fy=ty(37.5).toFixed(1);
+  return `<svg viewBox="0 0 130 440" class="thermo" role="img" aria-label="體溫計">
+  <rect x="45" y="26" width="40" height="370" rx="20" class="th-out"/><circle cx="65" cy="390" r="42" class="th-out"/>
+  <rect x="50" y="31" width="30" height="362" rx="15" class="th-in"/><circle cx="65" cy="390" r="37" class="th-in"/>
+  <circle cx="65" cy="390" r="29" class="th-merc"/><rect x="57" y="300" width="16" height="92" rx="8" class="th-merc th-col"/>
+  ${ticks}<line x1="38" x2="92" y1="${fy}" y2="${fy}" class="th-fever"/><text x="3" y="${+fy+4}" class="th-fl">37.5</text></svg>`;
+}
+function mercColor(t){
+  if(!mixOK) return t>=37.5?'var(--fever)':'var(--heal)';
+  const p=Math.max(0,Math.min(1,(t-37)/2))*100;
+  return `color-mix(in oklab, var(--fever) ${p.toFixed(0)}%, var(--heal))`;
+}
+function setThermo(host,t){
+  const c=Math.max(T0,Math.min(T1,t)),y=ty(c),col=host.querySelector('.th-col');
+  col.setAttribute('y',y.toFixed(1));col.setAttribute('height',Math.max(0,392-y).toFixed(1));
+  const color=mercColor(t);host.querySelectorAll('.th-merc').forEach(e=>e.style.fill=color);
+}
+function animateTemp(from,to,ms,step,done){
+  if(reduce){step(to);done&&done();return;}
+  const t0=performance.now();
+  (function f(now){const k=Math.min(1,(now-t0)/ms),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;step(from+(to-from)*e);if(k<1)requestAnimationFrame(f);else done&&done();})(t0);
+}
+
+/* ---------- warmup ---------- */
+const BANDS=[
+  {max:37.45,name:'正常',cls:'ok',feel:'精神很好，吃得下，想出去玩。',mouth:'M44,94 Q60,108 76,94'},
+  {max:37.95,name:'微燒',cls:'warm',feel:'有點累，懶懶的，不太想動。',mouth:'M46,99 L74,99'},
+  {max:38.95,name:'發燒',cls:'hot',feel:'頭昏，全身發熱，只想躺著。',mouth:'M44,103 Q60,93 76,103'},
+  {max:40.45,name:'高燒',cls:'hotter',feel:'頭昏眼花，全身發燙，躺在床上起不來。',mouth:'M44,105 Q60,90 76,105',note:'醫生路加特別記下：彼得的岳母熱病很重，可能就像這樣。'},
+  {max:99,name:'非常危險',cls:'danger',feel:'要馬上去看醫生！',mouth:'M44,105 Q60,90 76,105'}
+];
+const wHost=$('#warm-thermo');wHost.innerHTML=thermoSVG();
+const tIn=$('#temp');
+function paintWarm(t){
+  t=Math.round(t*10)/10;
+  setThermo(wHost,t);
+  $('#temp-big').innerHTML=t.toFixed(1)+'<small>°C</small>';
+  const bi=BANDS.findIndex(b=>t<=b.max),b=BANDS[bi];
+  const pill=$('#band-pill');pill.className='pill '+b.cls;pill.textContent=b.name;
+  $('#band-feel').textContent=b.feel;
+  const n=$('#band-note');n.hidden=!b.note;n.textContent=b.note||'';
+  $('#f-mouth').setAttribute('d',b.mouth);
+  const ck=[0,.25,.5,.75,.9][bi];$('#f-ck1').setAttribute('opacity',ck);$('#f-ck2').setAttribute('opacity',ck);
+  $('#f-open').setAttribute('opacity',bi>=3?0:1);$('#f-shut').setAttribute('opacity',bi>=3?1:0);
+  $('#f-heat').setAttribute('opacity',bi>=2?1:0);$('#f-sweat').setAttribute('opacity',bi>=3?1:0);
+}
+tIn.addEventListener('input',()=>paintWarm(+tIn.value));
+$$('.presets [data-t]').forEach(b=>b.addEventListener('click',()=>{const from=+tIn.value,to=+b.dataset.t;animateTemp(from,to,700,t=>{tIn.value=t.toFixed(1);paintWarm(t);});}));
+paintWarm(+tIn.value);
+
+/* ---------- illustration kit ---------- */
+const C={skin1:'#D9A273',skin2:'#BF8456',skin3:'#E6B98F',hairD:'#2E2119',hairB:'#5B3B25',hairG:'#A39C92',
+  jesus:'#F3EFE4',sash:'#2F5DA8',peter:'#8A5737',andrew:'#6E7C47',james:'#4D6C8D',john:'#B7783A',mom:'#7D5A8E',wife:'#B65A5A',
+  wood:'#8B5A34',woodD:'#6A4325',mat:'#EFE6CF',pillow:'#D6C8AA',bread:'#E2B66A',clay:'#B5683A',fever:'#E0482F',gold:'#F4B942'};
+function person(o){
+  const s=o.s||1,skin=o.skin||C.skin1,robe=o.robe||'#888',hair=o.hair||C.hairD;
+  const sit=o.body==='sit',lie=o.body==='lie',arm=o.arm||'down';
+  const H=sit?-66:-88,sh=H+24,bw=sit?28:22;
+  let g=`<path d="M${-bw},0 L-15,${H+20} Q0,${H+11} 15,${H+20} L${bw},0 Z" fill="${robe}" stroke="#00000022" stroke-width="1.2"/>`;
+  if(o.sash) g+=`<path d="M-16.4,${H+40} L16.4,${H+40} L17.2,${H+46} L-17.2,${H+46} Z" fill="${o.sash}"/>`;
+  const A=(x1,y1,x2,y2)=>`<path d="M${x1},${y1} L${x2},${y2}" stroke="#00000030" stroke-width="10" stroke-linecap="round"/><path d="M${x1},${y1} L${x2},${y2}" stroke="${robe}" stroke-width="7.5" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="4.3" fill="${skin}"/>`;
+  const Ld=A(-13,sh+2,-19,sh+34),Rd=A(13,sh+2,19,sh+34);
+  if(arm==='down') g+=Ld+Rd;
+  else if(arm==='up') g+=A(-13,sh+2,-27,sh-30)+A(13,sh+2,27,sh-30);
+  else if(arm==='reach') g+=Ld+A(13,sh+2,44,sh+14);
+  else if(arm==='point') g+=Ld+A(13,sh+2,40,sh-12);
+  else if(arm==='serve') g+=`<path d="M18,${sh+15} h30 a15 10 0 0 1 -30 0 z" fill="${C.clay}"/><ellipse cx="33" cy="${sh+13}" rx="11" ry="5" fill="${C.bread}"/>`+A(-12,sh+3,19,sh+18)+A(13,sh+2,47,sh+18);
+  if(o.cover) g+=`<path d="M-17,${H+19} Q-22,${H-18} 0,${H-19} Q22,${H-18} 17,${H+19} Z" fill="${o.cover}"/>`;
+  g+=`<circle cx="0" cy="${H}" r="14" fill="${skin}"/>`;
+  if(o.cover) g+=`<path d="M-15.5,${H-3} Q0,${H-23} 15.5,${H-3} Q0,${H-13} -15.5,${H-3} Z" fill="${o.cover}"/>`;
+  else g+=`<path d="M-14.6,${H-1} A14.6 14.6 0 0 1 14.6,${H-1} Q8,${H-9} 0,${H-9} Q-8,${H-9} -14.6,${H-1} Z" fill="${hair}"/>`;
+  if(o.beard) g+=`<path d="M-11.5,${H+2} Q-11,${H+21} 0,${H+22} Q11,${H+21} 11.5,${H+2} Q6,${H+10} 0,${H+10} Q-6,${H+10} -11.5,${H+2} Z" fill="${hair}"/>`;
+  if(o.sick){
+    g+=`<path d="M-8,${H-1} q3,2.4 6,0 M2,${H-1} q3,2.4 6,0" stroke="#2A1E16" stroke-width="1.7" fill="none" stroke-linecap="round"/>`;
+    g+=`<circle cx="-8.5" cy="${H+5}" r="3.4" fill="${C.fever}" opacity=".6"/><circle cx="8.5" cy="${H+5}" r="3.4" fill="${C.fever}" opacity=".6"/>`;
+    if(!o.beard) g+=`<path d="M-4,${H+9} q4,-2 8,0" stroke="#2A1E16" stroke-width="1.6" fill="none" stroke-linecap="round"/>`;
+  }else{
+    g+=`<circle cx="-5" cy="${H-1}" r="1.8" fill="#2A1E16"/><circle cx="5" cy="${H-1}" r="1.8" fill="#2A1E16"/>`;
+    if(!o.beard) g+=o.happy?`<path d="M-5.5,${H+5} q5.5,6 11,0" stroke="#2A1E16" stroke-width="1.7" fill="none" stroke-linecap="round"/>`:`<path d="M-4,${H+6.5} q4,2.6 8,0" stroke="#2A1E16" stroke-width="1.6" fill="none" stroke-linecap="round"/>`;
+  }
+  const heat=(cx,cy)=>`<g class="heat" stroke="${C.fever}" stroke-width="2.6" fill="none" stroke-linecap="round">${[-9,0,9].map(d=>`<path d="M${cx+d},${cy} q4,-5 0,-10 q-4,-5 0,-10"/>`).join('')}</g>`;
+  let out=lie?`<g transform="rotate(-90)">${g}</g>`:g;
+  if(o.sick) out+=lie?heat(H,-20):heat(0,H-20);
+  if(o.spark) out+=`<path class="spark" d="M0,-9 L2.4,-2.4 L9,0 L2.4,2.4 L0,9 L-2.4,2.4 L-9,0 L-2.4,-2.4 Z" fill="${C.gold}" transform="translate(24 ${H-20})"/>`;
+  return `<g transform="translate(${o.x} ${o.y}) scale(${o.flip?-s:s} ${s})">${out}</g>`;
+}
+const mat=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${C.mat}" stroke="#0000001a"/><path d="M${x+10},${y+h-8} H${x+w-10}" stroke="#D9CCAA" stroke-width="3"/>`;
+function room(){
+  return `<rect width="800" height="450" fill="#E9D5B3"/>
+  <rect y="330" width="800" height="120" fill="#C49E72"/><rect y="324" width="800" height="8" fill="#B38C60"/>
+  <rect x="90" y="70" width="90" height="100" rx="8" fill="${C.wood}"/><rect x="98" y="78" width="74" height="84" rx="5" fill="#BFE2F2"/>
+  <path d="M135,78 V162 M98,120 H172" stroke="${C.wood}" stroke-width="5"/>
+  <rect x="290" y="150" width="120" height="8" fill="${C.wood}"/>
+  <ellipse cx="322" cy="145" rx="15" ry="6" fill="${C.clay}"/><path d="M335,142 q7,-4 11,-1 q-4,4 -11,3 z" fill="${C.clay}"/>
+  <path d="M346,139 q4,-10 0,-16 q-6,7 0,16 z" fill="#F5B841"/>
+  <rect x="372" y="124" width="18" height="26" rx="5" fill="#C7854E"/><rect x="376" y="119" width="10" height="7" rx="2" fill="#A86B3C"/>
+  <rect x="630" y="110" width="130" height="220" fill="${C.wood}"/><rect x="640" y="120" width="110" height="210" fill="#F7EBCB"/>
+  <rect x="640" y="262" width="110" height="68" fill="#E3D2A6"/>`;
+}
+function mapInset(x,y){
+  return `<g transform="translate(${x} ${y})">
+  <rect width="196" height="132" rx="10" fill="#F7F1E3" stroke="#B9A27E" stroke-width="1.5"/>
+  <path d="M88,8 C86,18 90,24 91,30" stroke="#6FA6CF" stroke-width="2.5" fill="none"/>
+  <path d="M88,30 C105,26 122,36 124,52 C127,70 120,92 110,104 C104,112 94,112 90,102 C83,86 76,66 78,48 C79,38 82,32 88,30 Z" fill="#9FCBE6" stroke="#6FA6CF" stroke-width="1.5"/>
+  <path d="M98,110 C100,116 97,122 100,130" stroke="#6FA6CF" stroke-width="2.5" fill="none"/>
+  <circle cx="86" cy="32" r="5" fill="#D3412A"/><text x="78" y="26" text-anchor="end" class="svg-map">迦百農</text>
+  <text x="130" y="72" class="svg-map-s">加利利海</text>
+  <circle cx="34" cy="116" r="3.5" fill="#5B4A36"/><text x="42" y="120" class="svg-map-s" style="fill:#5B4A36">拿撒勒</text>
+  </g>`;
+}
+const glowDef=`<defs><radialGradient id="gl"><stop offset="0" stop-color="#FFF3C4" stop-opacity=".95"/><stop offset="1" stop-color="#FFF3C4" stop-opacity="0"/></radialGradient></defs>`;
+const pillow=`<ellipse cx="160" cy="352" rx="26" ry="14" fill="${C.pillow}"/>`;
+const MOM={robe:C.mom,cover:'#D6D0C4',skin:C.skin3};
+const momLying=()=>person({...MOM,x:282,y:359,s:1.25,body:'lie',sick:true});
+
+function scene1(){
+  let s=`<rect width="800" height="450" fill="#E5D9C2"/><rect width="800" height="52" fill="#D6C6A8"/>`;
+  [170,400,630].forEach(x=>s+=`<path d="M${x-22},128 V92 a22 22 0 0 1 44 0 V128 Z" fill="#BFE0F0"/>`);
+  [80,270,530,720].forEach(x=>s+=`<rect x="${x-17}" y="60" width="34" height="262" fill="#CDBFA5"/><rect x="${x-25}" y="52" width="50" height="14" rx="2" fill="#B6A78A"/><rect x="${x-23}" y="314" width="46" height="12" rx="2" fill="#B6A78A"/>`);
+  s+=`<rect y="298" width="800" height="30" fill="#BBAA8C"/><rect y="328" width="800" height="122" fill="#A6926F"/>`;
+  for(let x=60;x<=860;x+=100) s+=`<path d="M${x},328 L${x-50},450" stroke="#9A8664" stroke-width="2"/>`;
+  s+=`<rect x="335" y="324" width="130" height="16" rx="3" fill="#8A7656"/>`;
+  s+=person({x:625,y:330,s:.82,robe:'#7C8B5A',arm:'up',happy:true,beard:true});
+  s+=person({x:400,y:326,robe:C.jesus,sash:C.sash,arm:'point',hair:C.hairB,beard:true});
+  [[110,'#A35D4D',C.skin2,{beard:true}],[200,'#5A7898',C.skin1,{cover:'#E7DCC6'}],[295,'#B08A4A',C.skin3,{}],[510,'#6F5B8C',C.skin1,{beard:true,hair:C.hairG}],[605,'#4F7F73',C.skin2,{}],[700,'#94784E',C.skin3,{cover:'#D8E0E6'}]]
+    .forEach(([x,r,sk,ex])=>s+=person({x,y:432,body:'sit',robe:r,skin:sk,...ex}));
+  return s+mapInset(16,16);
+}
+function scene2(){
+  let s=room();
+  s+=person({x:372,y:404,body:'sit',robe:C.wife,cover:'#E9D8BD',skin:C.skin3});
+  s+=mat(118,330,214,58)+pillow+momLying();
+  s+=person({x:515,y:412,robe:C.peter,beard:true,hair:C.hairB,arm:'point'});
+  s+=person({x:582,y:404,s:.93,robe:C.andrew,beard:true});
+  s+=person({x:738,y:402,s:.88,robe:C.james,beard:true});
+  s+=person({x:782,y:406,s:.86,robe:C.john,hair:C.hairB});
+  s+=person({x:690,y:414,robe:C.jesus,sash:C.sash,hair:C.hairB,beard:true,flip:true});
+  return s;
+}
+function scene3(){
+  let s=glowDef+room();
+  s+=`<circle class="glow" cx="225" cy="340" r="160" fill="url(#gl)"/>`;
+  s+=person({x:84,y:402,s:.95,body:'sit',robe:C.wife,cover:'#E9D8BD',skin:C.skin3});
+  s+=mat(118,330,214,58)+pillow;
+  s+=`<g class="mom"><g class="v-sick">${momLying()}</g><g class="v-well">${person({...MOM,x:225,y:414,s:1.08,happy:true,spark:true})}</g></g>`;
+  s+=person({x:306,y:396,body:'sit',robe:C.jesus,sash:C.sash,hair:C.hairB,beard:true,arm:'reach',flip:true});
+  s+=person({x:475,y:408,robe:C.peter,beard:true,hair:C.hairB});
+  s+=person({x:548,y:402,s:.93,robe:C.andrew,beard:true});
+  s+=person({x:622,y:404,s:.95,robe:C.james,beard:true});
+  s+=person({x:696,y:400,s:.9,robe:C.john,hair:C.hairB});
+  return s;
+}
+function scene4(){
+  let s=room();
+  s+=person({x:385,y:378,body:'sit',robe:C.peter,beard:true,hair:C.hairB,happy:true});
+  s+=person({x:465,y:376,body:'sit',robe:C.jesus,sash:C.sash,hair:C.hairB,beard:true});
+  s+=person({x:545,y:378,body:'sit',robe:C.john,hair:C.hairB,happy:true});
+  s+=`<rect x="330" y="352" width="290" height="16" rx="4" fill="${C.wood}"/><rect x="345" y="366" width="12" height="28" fill="${C.woodD}"/><rect x="593" y="366" width="12" height="28" fill="${C.woodD}"/>`;
+  s+=`<ellipse cx="372" cy="347" rx="15" ry="7" fill="${C.bread}"/><ellipse cx="400" cy="348" rx="13" ry="6" fill="#D9A95C"/><rect x="440" y="334" width="14" height="18" rx="3" fill="${C.clay}"/><ellipse cx="505" cy="350" rx="26" ry="5" fill="#C9B79A"/><path d="M490,347 q12,-9 26,0 q-12,6 -26,0 z" fill="#9BA9B0"/><rect x="560" y="334" width="14" height="18" rx="3" fill="${C.clay}"/>`;
+  s+=person({x:655,y:400,s:.95,body:'sit',robe:C.andrew,beard:true});
+  s+=person({x:730,y:408,s:.93,robe:C.james,beard:true});
+  s+=person({x:120,y:404,s:.95,robe:C.wife,cover:'#E9D8BD',skin:C.skin3,happy:true});
+  s+=person({...MOM,x:215,y:414,s:1.06,arm:'serve',happy:true});
+  return s;
+}
+const ROBES=['#7C8B5A','#A35D4D','#5A7898','#B08A4A','#6F5B8C','#8E6B4F','#4F7F73','#A0604F','#6A7FA8','#94784E','#7D5A6E','#5F8A5B'];
+const CROWD=[
+  {x:60,y:372,s:.75,pose:'stand'},{x:140,y:372,s:.75,pose:'sit'},{x:220,y:372,s:.75,pose:'stand'},{x:300,y:372,s:.75,pose:'sit'},
+  {x:380,y:372,s:.75,pose:'stand'},{x:460,y:372,s:.75,pose:'sit'},{x:540,y:372,s:.75,pose:'stand'},
+  {x:80,y:442,s:.95,pose:'lie'},{x:215,y:442,s:.95,pose:'sit'},{x:325,y:442,s:.95,pose:'stand'},{x:445,y:442,s:.95,pose:'lie'},{x:570,y:442,s:.95,pose:'sit'}
+];
+function sickPerson(i,o){
+  const look={robe:ROBES[i%ROBES.length],skin:[C.skin1,C.skin2,C.skin3][i%3]};
+  if(i%4===1) look.cover=['#E7DCC6','#D8E0E6','#E9D0C8'][i%3]; else if(i%3===0) look.beard=true;
+  if(i===3||i===10) look.hair=C.hairG;
+  const s=o.s;let sick='';
+  if(o.pose==='lie'){
+    sick+=`<rect x="${o.x-60*s}" y="${o.y-50*s}" width="${120*s}" height="${46*s}" rx="${8*s}" fill="${C.mat}" stroke="#0000001a"/>`;
+    sick+=person({...look,x:o.x+51*s,y:o.y-27*s,s,body:'lie',sick:true});
+  }else sick+=person({...look,x:o.x,y:o.y,s,body:o.pose==='sit'?'sit':'stand',sick:true});
+  const well=person({...look,x:o.x,y:o.y,s,arm:'up',happy:true,spark:true});
+  const w=(o.pose==='lie'?124:84)*s;
+  return `<g class="sickp" data-i="${i}" tabindex="0" role="button" aria-label="醫治第 ${i+1} 位病人"><rect x="${o.x-w/2}" y="${o.y-132*s}" width="${w}" height="${136*s}" fill="transparent"/><g class="v-sick">${sick}</g><g class="v-well">${well}</g></g>`;
+}
+function scene5(){
+  let s=`<defs><linearGradient id="skyA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0AE5E"/><stop offset="1" stop-color="#FBE1B4"/></linearGradient>
+  <linearGradient id="skyB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E2752"/><stop offset=".7" stop-color="#4E4579"/><stop offset="1" stop-color="#9C6B7E"/></linearGradient>
+  <radialGradient id="lampG"><stop offset="0" stop-color="#FFD98A" stop-opacity=".95"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></radialGradient></defs>`;
+  s+=`<rect width="800" height="450" fill="url(#skyA)"/><rect class="sky-night" width="800" height="450" fill="url(#skyB)"/>`;
+  s+=`<g class="stars" fill="#FFF6D8">`+[[60,40],[140,80],[260,30],[330,90],[420,50],[480,110],[560,35],[700,70],[760,30],[620,120],[90,140],[380,140]].map(([x,y],k)=>`<circle cx="${x}" cy="${y}" r="${k%3?1.6:2.3}"/>`).join('')+`</g>`;
+  s+=`<circle class="sun" cx="210" cy="118" r="36" fill="#FCE38A"/>`;
+  s+=`<path d="M0,300 C120,252 230,268 330,284 C450,300 520,252 640,262 C720,270 770,284 800,280 V330 H0Z" fill="#8FA874"/>`;
+  s+=`<rect y="318" width="800" height="22" fill="#7FB0C8"/><rect y="336" width="800" height="114" fill="#C8AE80"/>`;
+  let steps='462,340';for(let k=0;k<8;k++){const y=340-k*20,x=462+k*7;steps+=` ${x},${y-20} ${x+7},${y-20}`;}steps+=' 520,180 520,340';
+  s+=`<polygon points="${steps}" fill="#C9A878"/>`;
+  s+=`<rect x="520" y="176" width="260" height="164" fill="#D8BB8C"/><rect x="510" y="164" width="280" height="16" fill="#C2A072"/>`;
+  s+=`<rect x="612" y="236" width="72" height="104" fill="#3B2A1E"/><rect x="715" y="220" width="34" height="30" fill="#3B2A1E"/>`;
+  s+=`<rect class="night-tint" width="800" height="450" fill="#141B45"/>`;
+  s+=`<circle class="lamp" cx="648" cy="292" r="95" fill="url(#lampG)"/>`;
+  s+=person({x:722,y:394,s:.9,robe:C.peter,beard:true,hair:C.hairB});
+  s+=person({x:648,y:400,robe:C.jesus,sash:C.sash,hair:C.hairB,beard:true,arm:'reach',flip:true});
+  CROWD.forEach((o,i)=>s+=sickPerson(i,o));
+  return s;
+}
+function scene6(){
+  let s=`<defs><linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26315E"/><stop offset=".55" stop-color="#6D5A8D"/><stop offset="1" stop-color="#F1B979"/></linearGradient></defs>
+  <rect width="800" height="450" fill="url(#dawn)"/>`;
+  s+=`<g stroke="#FFE7B0" stroke-width="16" opacity=".16" stroke-linecap="round">`;
+  for(let k=0;k<14;k++){const a=(-168+k*12)*Math.PI/180;s+=`<line x1="400" y1="176" x2="${(400+Math.cos(a)*460).toFixed(0)}" y2="${(176+Math.sin(a)*460).toFixed(0)}"/>`;}
+  s+=`</g><circle cx="400" cy="176" r="70" fill="#FFE7B0" opacity=".22"/>`;
+  s+=`<path d="M0,450 V384 C150,352 280,302 400,302 C520,302 650,352 800,384 V450 Z" fill="#3A3150"/>`;
+  s+=`<rect x="392" y="118" width="16" height="190" fill="#5A3A22"/><rect x="346" y="158" width="108" height="14" fill="#5A3A22"/>`;
+  s+=`<text x="400" y="62" text-anchor="middle" class="svg-kai" font-size="34" fill="#FFF3D9">因祂受的鞭傷我們得醫治</text>`;
+  s+=`<text x="400" y="420" text-anchor="middle" class="svg-kai" font-size="22" fill="#F3DCC0">祂親自取去了我們的軟弱，擔當了我們的疾病</text>`;
+  return s;
+}
+
+/* ---------- story ---------- */
+const SCENES=[
+  {draw:scene1,title:'安息日，在迦百農的會堂',ref:'可一21～28',
+   text:'這天是安息日。耶穌和門徒來到加利利海邊的迦百農，耶穌在會堂裡教導人，又把一個人身上的污靈趕出去。大家都很驚奇，因為祂說話帶著權柄。',
+   q:'看看地圖，迦百農在哪裡？十二個門徒裡，誰最愛說話，常常第一個衝出來？',
+   a:'迦百農在加利利海的北岸。最愛說話的門徒是彼得，他的家就在迦百農。'},
+  {draw:scene2,temp:40,title:'彼得家裡，有人發高燒',ref:'可一29～30；路四38',
+   text:'一出會堂，耶穌就同雅各、約翰，進了西門彼得和安得烈的家。彼得的岳母正發高燒躺著，家裡的人立刻把她的事告訴耶穌。',
+   q:'路加特別記下她的熱病「很重」。路加是做什麼的？家裡的人「告訴耶穌」，讓我們學到什麼？',
+   a:'路加是醫生（西四14），所以他特別注意病情。家人把難處告訴耶穌；我們有難處時，也可以馬上告訴主。'},
+  {draw:scene3,temp:40,action:true,title:'耶穌摸她的手',ref:'太八15；可一31；路四39',
+   text:'耶穌走到她旁邊，斥責那熱病，摸她的手，拉著她的手扶她起來。',
+   q:'地上的醫生要等病人來掛號，主耶穌呢？',
+   a:'主沒有等她來求。祂看見她生病，就憐憫她，主動摸她、醫治她。'},
+  {draw:scene4,temp:36.5,title:'她起來服事',ref:'太八15；路四39',
+   text:'燒退了！她不但能下床，還立刻起來服事耶穌和門徒。',
+   q:'一般人發高燒，退燒後能馬上起來做事嗎？',
+   a:'通常身體還很虛弱，要休息好幾天。但從主得醫治，不只病好了，還得著力量，能起來服事主。'},
+  {draw:scene5,crowd:true,title:'日落時，全城的人都來了',ref:'可一32～34；路四40',
+   text:'天晚日落的時候，人們把一切患病的、被鬼附的，都帶到耶穌跟前，全城的人都聚在門前。不論害什麼病，耶穌都按手在他們身上，醫好他們。',
+   q:'為什麼大家要等到日落，才把病人帶來？',
+   a:'那天是安息日，猶太人守安息日不作工，也不搬運重物。猶太人的一天從日落算起，太陽一下山，安息日就結束了，大家便趕快把病人帶來。'},
+  {draw:scene6,title:'祂擔當了我們的疾病',ref:'太八17；賽五三5',
+   text:'這是應驗申言者以賽亞的話：「祂親自取去了我們的軟弱，擔當了我們的疾病。」後來主在十字架上為我們受苦，「因祂受的鞭傷我們得醫治」。',
+   q:'主今天還能醫治我們嗎？我們要怎樣得著祂的醫治？',
+   a:'能！主在十字架上已經為我們成就了完全的醫治。我們只要向祂敞開，呼求祂、向祂禱告，把難處交給祂。'}
+];
+const svg=$('#stage-svg'),tm=$('#tm'),tmHost=$('#tm-svg'),tmVal=$('#tm-val'),act=$('#act'),actBtn=$('#act-btn'),counter=$('#counter'),cnt=$('#cnt'),toast=$('#toast'),healAllBtn=$('#heal-all');
+tmHost.innerHTML=thermoSVG();
+$('#sc-dots').innerHTML=SCENES.map((_,i)=>`<button type="button" data-i="${i}" aria-label="第 ${i+1} 幕">${i+1}</button>`).join('');
+let toastT=null,timers=[];
+function showToast(t){toast.textContent=t;toast.hidden=false;act.hidden=true;clearTimeout(toastT);toastT=setTimeout(()=>{toast.hidden=true;},3200);}
+const story={i:0,done:false,healed:new Set(),
+  go(n){this.i=Math.max(0,Math.min(SCENES.length-1,n));this.render();},
+  render(){
+    timers.forEach(clearTimeout);timers=[];
+    const sc=SCENES[this.i];this.done=false;this.healed.clear();
+    svg.setAttribute('class','sv');svg.innerHTML=sc.draw();
+    tm.hidden=sc.temp==null;
+    if(sc.temp!=null){setThermo(tmHost,sc.temp);tmVal.textContent=sc.temp.toFixed(1);}
+    act.hidden=!sc.action;actBtn.disabled=false;
+    counter.hidden=!sc.crowd;cnt.textContent='0';healAllBtn.disabled=false;
+    toast.hidden=true;
+    $('#sc-no').textContent=`第 ${this.i+1} 幕／共 ${SCENES.length} 幕`;
+    $('#sc-ref').textContent=sc.ref;$('#sc-title').textContent=sc.title;$('#sc-text').textContent=sc.text;
+    $('#sc-q').textContent=sc.q;$('#sc-a').textContent=sc.a;$('#sc-a').hidden=true;$('#sc-a-btn').textContent='看參考答案';
+    $$('#sc-dots button').forEach((b,k)=>{if(k===this.i)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
+    $('#sc-prev').disabled=this.i===0;
+    $('#sc-next').textContent=this.i===SCENES.length-1?'下一段：全人健檢 →':'下一幕 →';
+    if(sc.crowd) timers.push(setTimeout(()=>svg.classList.add('dusk-on'),350));
+  },
+  heal(){
+    if(this.done)return;this.done=true;actBtn.disabled=true;
+    animateTemp(40,36.5,2400,t=>{setThermo(tmHost,t);tmVal.textContent=t.toFixed(1);},()=>showToast('燒就退了！'));
+    timers.push(setTimeout(()=>{const m=svg.querySelector('.mom');m&&m.classList.add('healed');svg.classList.add('glow-on');},reduce?0:1100));
+  },
+  healOne(i){
+    if(this.healed.has(i))return;this.healed.add(i);
+    const g=svg.querySelector(`.sickp[data-i="${i}"]`);g&&g.classList.add('healed');
+    cnt.textContent=this.healed.size;
+    if(this.healed.size===CROWD.length){this.done=true;healAllBtn.disabled=true;showToast('不論什麼病，耶穌都醫好了！');}
+  },
+  healAll(){CROWD.forEach((_,i)=>timers.push(setTimeout(()=>this.healOne(i),reduce?0:i*130)));},
+  next(fromKey){
+    const sc=SCENES[this.i];
+    if(fromKey&&!this.done){if(sc.action){this.heal();return;}if(sc.crowd){this.healAll();this.done=true;return;}}
+    if(this.i<SCENES.length-1)this.go(this.i+1);else location.hash='#checkup';
+  },
+  prev(){if(this.i>0)this.go(this.i-1);}
+};
+actBtn.addEventListener('click',()=>story.heal());
+healAllBtn.addEventListener('click',()=>story.healAll());
+$('#sc-next').addEventListener('click',()=>story.next(false));
+$('#sc-prev').addEventListener('click',()=>story.prev());
+$('#sc-dots').addEventListener('click',e=>{const b=e.target.closest('button');if(b)story.go(+b.dataset.i);});
+$('#sc-a-btn').addEventListener('click',()=>{const a=$('#sc-a');a.hidden=!a.hidden;$('#sc-a-btn').textContent=a.hidden?'看參考答案':'收起答案';});
+svg.addEventListener('click',e=>{const g=e.target.closest('.sickp');if(g)story.healOne(+g.dataset.i);});
+svg.addEventListener('keydown',e=>{const g=e.target.closest&&e.target.closest('.sickp');if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();story.healOne(+g.dataset.i);}});
+document.addEventListener('keydown',e=>{
+  if(cur!=='story'||e.altKey||e.ctrlKey||e.metaKey)return;
+  const tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();story.next(true);}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();story.prev();}
+});
+
+/* ---------- checkup sorter ---------- */
+const CARDS=[
+  {t:'發燒，全身發燙',z:'body'},{t:'頭痛、肚子痛',z:'body'},{t:'感冒一直咳嗽',z:'body'},{t:'跌倒，膝蓋受傷',z:'body'},
+  {t:'一點小事就大發脾氣',z:'soul',why:'情感'},{t:'心裡悶悶的，什麼都不想做',z:'soul',why:'情感'},
+  {t:'打電動停不下來，叫吃飯也聽不見',z:'soul',why:'意志'},{t:'考試前急躁不安、胡思亂想',z:'soul',why:'心思'},
+  {t:'不想禱告',z:'spirit'},{t:'不想去聚會',z:'spirit'},{t:'讀聖經一點味道都沒有',z:'spirit'},{t:'覺得離主很遠，不想呼求祂',z:'spirit'}
+];
+const ZN={body:'身體',soul:'魂',spirit:'靈'};
+const HINT={body:'提示：這是看得見、摸得著的病痛，是身體生病了。',soul:'提示：這和想法、心情或管不住自己有關，是「魂」生病了。',spirit:'提示：這是和主之間的交通出了問題，是「靈」生病了。'};
+const pool=$('#pool'),smsg=$('#sort-msg');
+const sorter={sel:null,tries:{},placed:0,
+  msg(t,c){smsg.textContent=t;smsg.className='sort-msg'+(c?' '+c:'');},
+  reset(){
+    pool.innerHTML='';$$('.zone .zl').forEach(z=>z.innerHTML='');this.sel=null;this.placed=0;this.tries={};
+    const idx=CARDS.map((_,i)=>i);for(let i=idx.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]];}
+    idx.forEach(i=>{const b=document.createElement('button');b.type='button';b.className='chip';b.dataset.i=i;b.textContent=CARDS[i].t;b.setAttribute('aria-pressed','false');pool.appendChild(b);});
+    this.msg('先點一張卡片，再點它屬於「體、魂、靈」的哪一格。');
+  },
+  pick(b){
+    const on=b.getAttribute('aria-pressed')!=='true';
+    $$('.chip',pool).forEach(c=>c.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed',String(on));this.sel=on?b:null;
+    if(on)this.msg(`「${CARDS[+b.dataset.i].t}」要放在哪一格？`);
+  },
+  drop(z){
+    if(!this.sel){this.msg('請先點一張上面的卡片。');return;}
+    const b=this.sel,i=+b.dataset.i,c=CARDS[i];
+    if(c.z===z){
+      const p=document.createElement('span');p.className='placed';p.textContent=c.t+(c.why?`（${c.why}）`:'');
+      $(`.zone[data-z="${z}"] .zl`).appendChild(p);b.remove();this.sel=null;this.placed++;
+      if(this.placed===CARDS.length)this.msg('全部完成！身體、心情、靈都會生病，這些病，主都能醫治。','done');
+      else this.msg(`答對了！這是${ZN[z]}${c.why?'（'+c.why+'）':''}生病了。`,'good');
+    }else{
+      this.tries[i]=(this.tries[i]||0)+1;
+      b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');
+      this.msg(this.tries[i]>1?HINT[c.z]:'不太對，再想想：這是身體的病痛、心裡的問題，還是和主之間的問題？','bad');
+    }
+  }
+};
+pool.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)sorter.pick(b);});
+$$('.zone').forEach(z=>z.addEventListener('click',()=>sorter.drop(z.dataset.z)));
+$('#sort-reset').addEventListener('click',()=>sorter.reset());
+sorter.reset();
+
+/* ---------- verse ---------- */
+const PUNCT=/^[，；。、]$/;
+const VERSES=[
+  {ref:'太九12',toks:['強健的人','用不著','醫生','，','有病的人','才','用得著','。'],order:[2,4,1,6,0,5]},
+  {ref:'太八15',toks:['耶穌','摸','她的手','，','燒','就退了','；','她','便','起來','服事','耶穌','。'],order:[1,10,9,5,2,4,11,0,7,8]},
+  {ref:'太八17下',toks:['祂','親自','取去了','我們的','軟弱','，','擔當了','我們的','疾病','。'],order:[2,6,4,8,1,3,7,0]}
+];
+const LV=['全部顯示','遮一點','遮一半','只剩一點','全部遮住'];
+const verse={v:0,lvl:0,peek:new Set(),
+  render(){
+    const V=VERSES[this.v],k=Math.round(this.lvl/4*V.order.length),hid=new Set(V.order.slice(0,k));
+    $('#vbox').innerHTML=V.toks.map((t,i)=>PUNCT.test(t)?`<span class="punc">${t}</span>`:
+      hid.has(i)?`<span class="tok hid${this.peek.has(i)?' peek':''}" data-i="${i}" role="button" tabindex="0" aria-label="${this.peek.has(i)?t:'空格，點一下偷看'}">${t}</span>`:`<span class="tok">${t}</span>`).join('');
+    $('#vref').textContent='（'+V.ref+'）';$('#v-lvl').textContent=LV[this.lvl];
+    $$('#v-bar i').forEach((d,j)=>d.classList.toggle('on',j<this.lvl));
+    $$('#vtabs button').forEach((b,j)=>b.setAttribute('aria-selected',String(j===this.v)));
+    $('#v-easy').disabled=this.lvl===0;$('#v-hard').disabled=this.lvl===4;
+  }
+};
+$('#vtabs').innerHTML=VERSES.map((v,i)=>`<button type="button" role="tab" data-i="${i}">${v.ref}</button>`).join('');
+$('#vtabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;verse.v=+b.dataset.i;verse.lvl=0;verse.peek.clear();verse.render();});
+$('#v-hard').addEventListener('click',()=>{if(verse.lvl<4){verse.lvl++;verse.peek.clear();verse.render();}});
+$('#v-easy').addEventListener('click',()=>{if(verse.lvl>0){verse.lvl--;verse.peek.clear();verse.render();}});
+function peekTok(el){const i=+el.dataset.i;if(verse.peek.has(i))verse.peek.delete(i);else verse.peek.add(i);verse.render();}
+$('#vbox').addEventListener('click',e=>{const t=e.target.closest('.tok.hid');if(t)peekTok(t);});
+$('#vbox').addEventListener('keydown',e=>{const t=e.target.closest&&e.target.closest('.tok.hid');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();peekTok(t);}});
+verse.render();
+
+/* ---------- prayer wall ---------- */
+const PKEY='peterHeal.prayers.v1';
+const PART={body:'身體',soul:'心情和想法',spirit:'靈'};
+const SAMPLE=[{id:'s1',who:'奶奶',part:'body',need:'膝蓋痛，走路不方便',sample:true},{id:'s2',who:'我',part:'soul',need:'最近很容易發脾氣',sample:true},{id:'s3',who:'',part:'spirit',need:'早上起來都不想禱告',sample:true}];
+let prayers;
+try{const raw=store.get(PKEY);prayers=raw?JSON.parse(raw):SAMPLE.slice();if(!Array.isArray(prayers))prayers=SAMPLE.slice();}catch(e){prayers=SAMPLE.slice();}
+const savePr=()=>store.set(PKEY,JSON.stringify(prayers));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function paintWall(){
+  $$('#wall .wcol').forEach(col=>{
+    const list=prayers.filter(p=>p.part===col.dataset.part);
+    col.querySelector('ul').innerHTML=list.length?list.map(p=>`<li class="pcard"><span class="who">${esc(p.who||'不具名')}${p.sample?'<span class="sample">範例</span>':''}</span><span class="need">${esc(p.need)}</span><button class="x" type="button" data-id="${esc(p.id)}" aria-label="移除這張代禱卡">×</button></li>`).join(''):`<li class="empty">還沒有卡片</li>`;
+  });
+  $('#p-start').disabled=prayers.length===0;
+}
+$('#pform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const need=$('#p-need').value.trim();if(!need){$('#p-need').focus();return;}
+  const part=($('input[name="part"]:checked')||{}).value||'body';
+  prayers.push({id:'p'+Date.now().toString(36),who:$('#p-who').value.trim(),part,need});
+  savePr();paintWall();$('#p-need').value='';$('#p-who').value='';$('#p-who').focus();
+});
+$('#wall').addEventListener('click',e=>{const x=e.target.closest('.x');if(!x)return;prayers=prayers.filter(p=>p.id!==x.dataset.id);savePr();paintWall();});
+let clearArm=null;const clearBtn=$('#p-clear');
+clearBtn.addEventListener('click',()=>{
+  if(!clearArm){clearBtn.textContent='確定清除？';clearArm=setTimeout(()=>{clearArm=null;clearBtn.textContent='清除全部';},3000);return;}
+  clearTimeout(clearArm);clearArm=null;clearBtn.textContent='清除全部';prayers=[];savePr();paintWall();$('#praying').hidden=true;
+});
+function prayerFor(p){
+  const who=(p.who||'').trim(),self=who==='我'||who==='自己',name=who||'這位朋友';
+  if(self) return `主耶穌，我把自己帶到你面前。我的${PART[p.part]}需要你：${p.need}。求你摸我，像摸彼得岳母的手一樣，使我得醫治，能起來服事你。阿們！`;
+  return `主耶穌，我把${name}帶到你面前。${name}的${PART[p.part]}需要你：${p.need}。求你摸${name}，像摸彼得岳母的手一樣，使${name}得醫治，能起來服事你。阿們！`;
+}
+let pi=0;
+function paintPraying(){
+  const order=['body','soul','spirit'],list=prayers.slice().sort((a,b)=>order.indexOf(a.part)-order.indexOf(b.part));
+  if(!list.length){$('#praying').hidden=true;return;}
+  pi=Math.max(0,Math.min(list.length-1,pi));const p=list[pi];
+  $('#pr-meta').textContent=`第 ${pi+1} 張／共 ${list.length} 張`;
+  $('#pr-text').textContent=prayerFor(p);
+  $('#pr-prev').disabled=pi===0;$('#pr-next').disabled=pi===list.length-1;
+}
+$('#p-start').addEventListener('click',()=>{pi=0;$('#praying').hidden=false;paintPraying();$('#praying').scrollIntoView({block:'nearest',behavior:reduce?'auto':'smooth'});});
+$('#pr-prev').addEventListener('click',()=>{pi--;paintPraying();});
+$('#pr-next').addEventListener('click',()=>{pi++;paintPraying();});
+$('#pr-close').addEventListener('click',()=>{$('#praying').hidden=true;});
+paintWall();
+
+route();
+})();
+</script>
+</body>
+</html>
