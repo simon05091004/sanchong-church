@@ -336,6 +336,13 @@ body.proj .narr-text{font-size:clamp(22px,2.5vw,30px)}
 .practice .ptitle{font-family:var(--font-kai);font-size:22px;font-weight:700;color:var(--heal)}
 .practice p{margin:0}
 .takeaway{font-family:var(--font-kai);font-size:clamp(22px,3vw,34px);text-align:center;margin:8px 0 0;color:var(--heal);line-height:1.5}
+.qr-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center}
+.qr-card p{margin:0}
+.qr-slot svg{width:clamp(120px,15vw,170px);height:auto;display:block;border-radius:8px}
+.qr-card .url{font-size:12.5px;color:var(--muted);word-break:break-all;margin-top:4px}
+@media (max-width:520px){.qr-card{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}}
+.seg-foot a.primary{margin-left:auto}
+body.kids .plan-tl,body.kids #mode,body.kids #timer,body.kids .qr-card,body.kids .seg-foot a[href="#plan"]{display:none!important}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important;animation:none!important}}
 </style>
 </head>
@@ -434,6 +441,10 @@ body.proj .narr-text{font-size:clamp(22px,2.5vw,30px)}
       <div class="side-card">
         <h3>詩歌</h3>
         <p style="margin:0">〈我心憂愁麼〉，親子手冊乙本 16 頁</p>
+      </div>
+      <div class="side-card qr-card">
+        <div class="qr-slot"></div>
+        <div><h3>給孩子掃的 QR</h3><p>孩子掃進來直接看到上課畫面，不會看到教師提示和教案。禱告段落最後也有這張 QR。</p><p class="url"></p></div>
       </div>
       <div class="side-card">
         <h3>課前準備</h3>
@@ -726,6 +737,10 @@ body.proj .narr-text{font-size:clamp(22px,2.5vw,30px)}
         <span class="ptitle">本週操練</span>
         <p>每天選一個人（自己、家人或同學），為他靈、魂或身體的一項需要向主禱告一句話。下週來分享主怎樣回應你。</p>
       </div>
+      <div class="card qr-card">
+        <div class="qr-slot"></div>
+        <div><b class="kai" style="font-size:22px">回家再看一次</b><p>用手機掃 QR，可以重看故事、玩全人健檢、背經，也可以自己寫代禱卡。</p><p class="url"></p></div>
+      </div>
       <p class="takeaway">把難處帶到主面前，讓祂摸你，你就能起來服事祂。</p>
     </div>
     <aside class="teacher">
@@ -789,9 +804,15 @@ const timer=(()=>{
 })();
 
 /* ---------- mode & fullscreen ---------- */
-function setMode(m){document.body.classList.toggle('proj',m==='proj');$$('#mode button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));store.set('peterHeal.mode',m);}
+let KIDS=false;try{KIDS=new URLSearchParams(location.search).has('kids');}catch(e){}
+const KIDS_URL='https://simon05091004.github.io/sanchong-church/kids/peter-healing.html?kids';
+const QR_SVG="<svg role=\"img\" aria-label=\"給孩子掃的 QR code\" width=\"212\" height=\"212\" class=\"segno\"><g transform=\"scale(4)\"><path fill=\"#fff\" d=\"M0 0h53v53h-53z\"/><path class=\"qrline\" stroke=\"#14213a\" d=\"M2 2.5h7m1 0h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h2m3 0h1m2 0h2m3 0h1m1 0h7m-49 1h1m5 0h1m1 0h2m3 0h1m6 0h2m3 0h1m1 0h1m3 0h2m1 0h1m2 0h4m1 0h1m5 0h1m-49 1h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h2m2 0h2m4 0h1m1 0h1m1 0h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h3m1 0h1m-49 1h1m1 0h3m1 0h1m4 0h3m1 0h3m2 0h1m1 0h3m1 0h3m3 0h1m1 0h4m1 0h1m2 0h1m1 0h3m1 0h1m-49 1h1m1 0h3m1 0h1m3 0h1m1 0h4m1 0h1m1 0h9m3 0h1m3 0h3m4 0h1m1 0h3m1 0h1m-49 1h1m5 0h1m1 0h1m6 0h1m1 0h2m3 0h1m3 0h1m1 0h1m4 0h2m3 0h1m3 0h1m5 0h1m-49 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-41 1h2m2 0h1m1 0h5m3 0h1m3 0h2m3 0h3m2 0h4m-38 1h3m1 0h1m1 0h3m3 0h1m4 0h1m1 0h6m3 0h1m1 0h1m1 0h2m1 0h2m1 0h4m2 0h3m-49 1h1m1 0h1m4 0h2m1 0h1m3 0h5m2 0h2m2 0h3m1 0h2m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m-44 1h4m1 0h1m1 0h3m3 0h1m3 0h3m4 0h1m2 0h2m1 0h5m2 0h2m5 0h1m1 0h2m-49 1h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m2 0h1m1 0h3m8 0h1m1 0h1m2 0h1m2 0h1m-47 1h1m2 0h1m1 0h2m2 0h1m2 0h1m3 0h2m2 0h2m1 0h1m1 0h3m2 0h1m2 0h4m1 0h4m2 0h2m1 0h1m-48 1h5m1 0h2m1 0h1m3 0h2m2 0h1m1 0h1m2 0h2m3 0h1m1 0h1m2 0h1m3 0h1m1 0h1m1 0h4m1 0h1m-45 1h3m1 0h3m4 0h3m2 0h1m3 0h2m1 0h2m1 0h1m1 0h2m1 0h3m2 0h3m2 0h3m2 0h1m-48 1h1m2 0h2m3 0h2m2 0h3m5 0h4m2 0h2m1 0h4m1 0h1m3 0h2m2 0h3m-45 1h3m2 0h1m3 0h2m2 0h2m1 0h2m1 0h2m2 0h1m1 0h1m2 0h1m1 0h2m2 0h2m2 0h1m1 0h2m3 0h1m1 0h1m-49 1h1m3 0h1m4 0h2m7 0h1m1 0h3m1 0h2m2 0h2m1 0h3m2 0h1m2 0h1m1 0h3m1 0h3m-47 1h1m1 0h1m2 0h1m2 0h1m3 0h2m8 0h1m1 0h1m3 0h4m2 0h2m3 0h1m3 0h2m2 0h1m-49 1h2m2 0h1m2 0h1m2 0h1m1 0h3m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h3m1 0h1m2 0h3m2 0h3m3 0h1m-49 1h3m2 0h2m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m4 0h1m1 0h2m1 0h2m3 0h6m1 0h2m2 0h1m1 0h1m-49 1h3m1 0h2m1 0h4m1 0h3m2 0h2m4 0h3m2 0h1m7 0h1m4 0h2m-42 1h2m1 0h9m3 0h2m3 0h6m2 0h1m1 0h1m1 0h2m3 0h1m1 0h5m2 0h2m-49 1h1m1 0h1m1 0h1m3 0h1m8 0h1m4 0h1m3 0h1m1 0h3m6 0h1m1 0h2m3 0h2m2 0h1m-47 1h3m1 0h1m1 0h2m1 0h1m3 0h3m1 0h1m2 0h1m1 0h1m1 0h1m2 0h5m1 0h2m3 0h1m1 0h1m1 0h1m1 0h2m-48 1h1m1 0h3m3 0h1m10 0h1m1 0h2m3 0h1m1 0h2m2 0h1m2 0h1m3 0h2m3 0h1m1 0h1m-46 1h1m2 0h5m1 0h3m1 0h2m1 0h2m1 0h17m1 0h11m-47 1h1m2 0h1m3 0h2m1 0h1m2 0h3m2 0h1m5 0h1m2 0h1m2 0h1m1 0h1m2 0h2m2 0h1m1 0h1m3 0h2m-49 1h1m2 0h1m2 0h4m2 0h4m1 0h6m1 0h2m2 0h1m1 0h2m1 0h4m1 0h2m2 0h1m1 0h4m-46 1h4m2 0h4m1 0h1m3 0h1m1 0h1m3 0h1m1 0h1m2 0h1m6 0h1m1 0h1m1 0h1m1 0h3m1 0h3m-42 1h3m3 0h1m1 0h1m1 0h1m1 0h1m3 0h3m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m3 0h4m1 0h2m-47 1h1m1 0h1m2 0h5m1 0h1m1 0h4m1 0h3m3 0h2m1 0h3m2 0h3m1 0h1m1 0h2m2 0h1m2 0h2m-49 1h3m1 0h1m1 0h2m2 0h2m1 0h1m1 0h3m1 0h3m3 0h1m2 0h1m5 0h1m1 0h6m2 0h1m1 0h3m-48 1h4m4 0h1m1 0h1m2 0h5m2 0h1m3 0h3m1 0h3m3 0h3m3 0h1m-42 1h1m1 0h3m1 0h5m3 0h1m1 0h4m1 0h1m3 0h1m1 0h2m1 0h1m3 0h1m1 0h1m1 0h5m1 0h1m2 0h2m-49 1h1m3 0h2m2 0h1m1 0h9m3 0h3m1 0h2m1 0h4m1 0h1m2 0h2m2 0h1m5 0h2m-49 1h3m3 0h4m5 0h1m1 0h1m4 0h1m1 0h2m1 0h2m2 0h1m1 0h4m2 0h1m2 0h3m1 0h2m-45 1h1m1 0h1m5 0h3m3 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h2m5 0h3m1 0h1m1 0h1m1 0h1m2 0h1m-46 1h1m3 0h2m4 0h3m1 0h2m2 0h1m8 0h3m1 0h3m3 0h6m2 0h3m-48 1h3m4 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m2 0h2m2 0h2m1 0h1m1 0h1m2 0h2m4 0h1m3 0h2m-49 1h3m3 0h4m6 0h1m2 0h1m1 0h11m1 0h4m1 0h11m-41 1h1m6 0h3m1 0h1m1 0h2m3 0h1m1 0h2m4 0h5m1 0h1m3 0h1m2 0h1m-48 1h7m3 0h4m2 0h1m1 0h2m1 0h2m1 0h1m1 0h2m1 0h2m2 0h1m6 0h1m1 0h1m1 0h2m2 0h1m-49 1h1m5 0h1m3 0h2m1 0h3m6 0h1m3 0h4m2 0h1m1 0h1m2 0h4m3 0h1m-45 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m2 0h5m1 0h1m5 0h11m1 0h2m-48 1h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m2 0h2m1 0h1m2 0h3m1 0h2m1 0h3m2 0h1m1 0h1m2 0h1m3 0h2m2 0h1m-49 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m2 0h2m1 0h2m1 0h3m3 0h2m1 0h1m1 0h2m-49 1h1m5 0h1m2 0h3m5 0h1m5 0h2m1 0h1m1 0h1m2 0h4m2 0h3m1 0h3m1 0h1m2 0h1m-49 1h7m4 0h1m5 0h5m3 0h1m5 0h1m1 0h1m1 0h2m1 0h1m5 0h1m1 0h3\"/></g></svg>";
+$$('.qr-slot').forEach(s=>s.innerHTML=QR_SVG);
+$$('.qr-card .url').forEach(p=>p.textContent=KIDS_URL);
+function setMode(m,save){document.body.classList.toggle('proj',m==='proj');$$('#mode button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));if(save!==false)store.set('peterHeal.mode',m);}
 $$('#mode button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
-setMode(store.get('peterHeal.mode')==='proj'?'proj':'prep');
+if(KIDS){document.body.classList.add('kids');setMode('proj',false);}
+else setMode(store.get('peterHeal.mode')==='proj'?'proj':'prep');
 const fsBtn=$('#fs');
 if(!document.documentElement.requestFullscreen) fsBtn.hidden=true;
 fsBtn.addEventListener('click',()=>{
@@ -804,7 +825,7 @@ document.addEventListener('fullscreenchange',()=>{fsBtn.textContent=document.ful
 let cur=null;
 function route(){
   let id=location.hash.replace('#','');
-  if(!ROUTES.includes(id)) id='plan';
+  if(!ROUTES.includes(id)||(KIDS&&id==='plan')) id=KIDS?'open':'plan';
   $$('section[data-route]').forEach(s=>s.hidden=s.dataset.route!==id);
   $$('.tl').forEach(a=>{if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   timer.load(SEGS.find(s=>s.id===id)||null);
